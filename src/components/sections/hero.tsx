@@ -9,6 +9,7 @@ import { DotButton, PrevButton, NextButton } from '@/components/ui/carousel-butt
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import { TheeEntityLogo } from '../thee-entity-logo';
 
 
 const heroSlides = [
@@ -80,6 +81,12 @@ export default function Hero() {
           >
             <Link href="#services">Join Us This Sunday</Link>
           </Button>
+        </div>
+        <div className="flex justify-center items-center gap-2 mt-8 animate-fade-in-up animation-delay-300">
+            <span className="text-sm text-gray-400">Powered by</span>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              <TheeEntityLogo className="text-white"/>
+            </a>
         </div>
       </div>
 
