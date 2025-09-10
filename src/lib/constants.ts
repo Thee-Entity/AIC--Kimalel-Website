@@ -67,7 +67,7 @@ export const ministries: Ministry[] = [
         description: "Empowering women through prayer, fellowship, and service.",
         icon: HeartHandshake,
         imageId: "ministry-women",
-        href: "#", // Replace with actual link
+        href: "/ministries/womens-fellowship",
     },
     {
         name: "Youth Fellowship (AIC Youth)",

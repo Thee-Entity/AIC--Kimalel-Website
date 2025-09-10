@@ -68,6 +68,18 @@
         "imageHint": "women group"
     },
     {
+        "id": "ministry-women-hero",
+        "description": "A diverse group of women worshiping.",
+        "imageUrl": "https://picsum.photos/seed/minwhero/1920/1080",
+        "imageHint": "women worship"
+    },
+    {
+        "id": "ministry-women-highlight",
+        "description": "Women holding hands in prayer.",
+        "imageUrl": "https://picsum.photos/seed/minwhighlight/1200/400",
+        "imageHint": "women praying"
+    },
+    {
         "id": "ministry-children",
         "description": "Happy children playing and learning in a classroom.",
         "imageUrl": "https://picsum.photos/seed/minchild/400/400",
