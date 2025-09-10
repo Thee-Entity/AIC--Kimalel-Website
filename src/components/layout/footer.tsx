@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Facebook, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/logo';
@@ -13,7 +14,7 @@ const quickLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Ministries', href: '/ministries' },
   { name: 'Events', href: '/events' },
-  { name: 'Give', href: '/#give' },
+  { name: 'Support Us', href: '/support' },
   { name: 'Contact', href: '/contact' },
 ];
 

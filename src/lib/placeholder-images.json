@@ -162,6 +162,12 @@
         "description": "The exterior of a modern church building on a sunny day.",
         "imageUrl": "https://picsum.photos/seed/contacthero/1920/1080",
         "imageHint": "church building"
+    },
+    {
+        "id": "support-hero",
+        "description": "Inspiring photo of the church building / congregation.",
+        "imageUrl": "https://picsum.photos/seed/supporthero/1920/1080",
+        "imageHint": "church building"
     }
   ]
 }

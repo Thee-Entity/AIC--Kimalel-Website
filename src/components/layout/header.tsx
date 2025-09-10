@@ -15,7 +15,7 @@ const navLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Ministries', href: '/ministries' },
   { name: 'Events', href: '/events' },
-  { name: 'Give', href: '/#give' },
+  { name: 'Support Us', href: '/support' },
   { name: 'Contact', href: '/contact' },
 ];
 
