@@ -1,7 +1,8 @@
+
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const contactDetails = [
-    { icon: MapPin, title: "Church Address", lines: ["AIC Kimalel Saramek", "Kericho County, Kenya"] },
+    { icon: MapPin, title: "Church Address", lines: ["AIC Kimalel Saramek", "Racecourse, Eldoret, Uasin Gishu County"] },
     { icon: Phone, title: "Phone Numbers", lines: ["Office: +254 700 000 000"] },
     { icon: Mail, title: "Email Address", lines: ["info@aickimalel.org"] },
     { icon: Clock, title: "Office Hours", lines: ["Monday - Friday", "8:00 AM - 5:00 PM"] },

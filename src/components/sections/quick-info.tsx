@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, MapPin, Youtube } from 'lucide-react';
@@ -18,7 +19,7 @@ const infoItems = [
     title: "Our Location",
     lines: [
       { label: "AIC Kimalel Saramek Church,", value: "" },
-      { label: "Kericho County, Kenya.", value: "" }
+      { label: "Racecourse, Eldoret.", value: "" }
     ],
     buttonText: "Get Directions"
   },

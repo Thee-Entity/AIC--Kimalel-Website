@@ -60,7 +60,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent" />
-                  <span>Kericho County, Kenya</span>
+                  <span>Racecourse, Eldoret</span>
                 </li>
               </ul>
               <div className="flex space-x-4 mt-6">
