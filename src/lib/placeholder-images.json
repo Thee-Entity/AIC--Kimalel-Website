@@ -4,7 +4,19 @@
       "id": "hero-background",
       "description": "A vibrant church congregation worshiping together.",
       "imageUrl": "https://picsum.photos/seed/hero/1920/1080",
-      "imageHint": "church congregation"
+      "imageHint": "church worship"
+    },
+    {
+      "id": "hero-slide-1",
+      "description": "Sunlight streaming through a church window.",
+      "imageUrl": "https://picsum.photos/seed/slide1/1920/1080",
+      "imageHint": "church window"
+    },
+    {
+      "id": "hero-slide-2",
+      "description": "A group of people holding hands in prayer.",
+      "imageUrl": "https://picsum.photos/seed/slide2/1920/1080",
+      "imageHint": "people praying"
     },
     {
       "id": "sermon-thumbnail",
