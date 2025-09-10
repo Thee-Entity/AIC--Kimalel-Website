@@ -150,6 +150,12 @@
         "description": "Profile picture of Pastor Jophet Lagat.",
         "imageUrl": "https://picsum.photos/seed/leader3/200/200",
         "imageHint": "male pastor"
+    },
+    {
+        "id": "event-hero",
+        "description": "A large, joyful crowd at a church conference.",
+        "imageUrl": "https://picsum.photos/seed/eventhero/1920/1080",
+        "imageHint": "church conference"
     }
   ]
 }
