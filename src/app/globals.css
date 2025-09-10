@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    --background: 208 100% 97%; /* #F0F8FF - Very Light Blue (Alice Blue) */
+    --background: 0 0% 96.1%; /* #F5F5F5 - Light Gray (Neutral) */
     --foreground: 210 100% 10%; /* Darker shade for text */
-    --card: 0 0% 100%;
+    --card: 0 0% 100%; /* #FFFFFF - White (Secondary) */
     --card-foreground: 210 100% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 210 100% 10%;
-    --primary: 210 100% 20%; /* #003366 - Deep Blue */
+    --primary: 210 100% 20%; /* #003366 - Deep Blue (Primary) */
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%; /* #F5F5F5 - Light Gray */
+    --secondary: 0 0% 100%; /* #FFFFFF - White (Secondary) */
     --secondary-foreground: 210 100% 10%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 51 100% 50%; /* #FFD700 - Warm Gold */
+    --accent: 45 68% 52%; /* #D4AF37 - Metallic Gold (Accent) */
     --accent-foreground: 210 100% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -32,19 +32,19 @@
   }
 
   .dark {
-    --background: 0 0% 13.3%; /* #222222 - Dark Gray */
+    --background: 0 0% 13.3%; /* #222222 - Dark Gray (Contrast) */
     --foreground: 0 0% 98%;
     --card: 0 0% 13.3%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 13.3%;
     --popover-foreground: 0 0% 98%;
-    --primary: 210 100% 20%; /* #003366 - Deep Blue */
+    --primary: 210 100% 20%; /* #003366 - Deep Blue (Primary) */
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 51 100% 50%; /* #FFD700 - Warm Gold */
+    --accent: 45 68% 52%; /* #D4AF37 - Metallic Gold (Accent) */
     --accent-foreground: 210 100% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
