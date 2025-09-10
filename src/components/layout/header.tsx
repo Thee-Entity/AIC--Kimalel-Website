@@ -11,7 +11,7 @@ import { Logo } from '@/components/logo';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Services', href: '/#services' },
+  { name: 'Services', href: '/services' },
   { name: 'Sermons', href: '/#sermons' },
   { name: 'Events', href: '/#events' },
   { name: 'Give', href: '/#give' },

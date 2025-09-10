@@ -97,6 +97,12 @@
         "imageHint": "church interior"
     },
     {
+        "id": "services-hero",
+        "description": "A church congregation with hands raised in worship.",
+        "imageUrl": "https://picsum.photos/seed/serviceshero/1920/1080",
+        "imageHint": "worship service"
+    },
+    {
         "id": "leader-1",
         "description": "Profile picture of Reverend Ngetich Elius.",
         "imageUrl": "https://picsum.photos/seed/leader1/200/200",
