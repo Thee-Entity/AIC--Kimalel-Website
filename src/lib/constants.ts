@@ -110,9 +110,9 @@ export const testimonies = [
 
 export const leadership = [
     {
-        name: "Reverend Ngetich Elius",
+        name: "Reverend Elius Ngetich",
         role: "Leader",
-        bio: "Reverend Ngetich Elius serves as the senior leader of AIC Kimalel Saramek Church, guiding the congregation in faith and spiritual growth.",
+        bio: "Reverend Elius Ngetich serves as the senior leader of AIC Kimalel Saramek Church, guiding the congregation in faith and spiritual growth.",
         imageId: "leader-1",
     },
     {
