@@ -41,19 +41,21 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
-      <div className="overflow-hidden w-full h-full" ref={emblaRef}>
+      <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full">
           {heroSlides.map((slide, index) => (
             <div
               className="relative flex-[0_0_100%] h-full transition-opacity duration-1000"
               key={slide.id}
-              style={{ opacity: selectedIndex === index ? 1 : 0 }}
             >
               <Image
                 src={slide.imageUrl}
                 alt={slide.description}
                 fill
-                className="object-cover"
+                className={cn(
+                    "object-cover transition-opacity duration-1000",
+                    selectedIndex === index ? "opacity-100" : "opacity-0"
+                )}
                 priority={index === 0}
                 data-ai-hint={slide.imageHint}
               />
@@ -63,14 +65,14 @@ export default function Hero() {
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/60 to-transparent"></div>
       
-      <div className="relative z-10 px-4">
+      <div className="relative z-10 px-4 flex flex-col items-center">
         <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-accent glow-gold-lg animate-fade-in-down">
           AIC Kimalel Saramek Church
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 animate-fade-in-up">
           A Place of Worship, Growth, and Community
         </p>
-        <div className="flex animate-fade-in-up animation-delay-300">
+        <div className="animate-fade-in-up animation-delay-300">
           <Button
             size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:glow-gold"
