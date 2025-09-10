@@ -156,6 +156,12 @@
         "description": "A large, joyful crowd at a church conference.",
         "imageUrl": "https://picsum.photos/seed/eventhero/1920/1080",
         "imageHint": "church conference"
+    },
+    {
+        "id": "contact-hero",
+        "description": "The exterior of a modern church building on a sunny day.",
+        "imageUrl": "https://picsum.photos/seed/contacthero/1920/1080",
+        "imageHint": "church building"
     }
   ]
 }

@@ -16,7 +16,7 @@ const navLinks = [
   { name: 'Ministries', href: '/ministries' },
   { name: 'Events', href: '/events' },
   { name: 'Give', href: '/#give' },
-  { name: 'Contact', href: '/#contact' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -75,7 +75,7 @@ export default function Header() {
               className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold"
               asChild
             >
-              <Link href="#visit">Plan Your Visit</Link>
+              <Link href="/contact">Plan Your Visit</Link>
             </Button>
           </div>
 
@@ -116,7 +116,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         asChild
                     >
-                      <Link href="#visit">Plan Your Visit</Link>
+                      <Link href="/contact">Plan Your Visit</Link>
                     </Button>
                   </nav>
                 </div>
