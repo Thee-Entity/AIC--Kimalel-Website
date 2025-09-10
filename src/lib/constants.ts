@@ -116,7 +116,7 @@ export const leadership = [
         imageId: "leader-1",
     },
     {
-        name: "Pastor Moureen",
+        name: "Pastor Moureen Kosgei",
         role: "Pastor",
         bio: "Passionate about discipleship and community, Pastor Moureen leads ministries with a focus on nurturing faith and empowering families.",
         imageId: "leader-2",
