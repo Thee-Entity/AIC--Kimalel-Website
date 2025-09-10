@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useActionState, useEffect } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useFormState, useFormStatus } from 'react-dom';
+import { useEffect } from 'react';
 import { handleMinistrySignup } from '@/app/ministries/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,7 +18,7 @@ function SubmitButton() {
 }
 
 export default function WomensFellowshipJoin() {
-  const [state, formAction] = useActionState(handleMinistrySignup, { message: '', success: false });
+  const [state, formAction] = useFormState(handleMinistrySignup, { message: '', success: false });
   const { toast } = useToast();
 
   useEffect(() => {

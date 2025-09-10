@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useActionState } from 'react-dom';
-import { useFormStatus } from 'react-dom';
+import { useFormState, useFormStatus } from 'react-dom';
 import { handleEventRsvp } from '@/app/events/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,7 +19,7 @@ function SubmitButton() {
 }
 
 export default function EventRsvp() {
-  const [state, formAction] = useActionState(handleEventRsvp, { message: '', success: false });
+  const [state, formAction] = useFormState(handleEventRsvp, { message: '', success: false });
   const { toast } = useToast();
 
   useEffect(() => {
