@@ -89,6 +89,30 @@
       "description": "A happy person outdoors.",
       "imageUrl": "https://picsum.photos/seed/test3/200/200",
       "imageHint": "person happy"
+    },
+    {
+        "id": "about-hero",
+        "description": "Soft focus image of the inside of a church with light streaming in.",
+        "imageUrl": "https://picsum.photos/seed/abouthero/1920/1080",
+        "imageHint": "church interior"
+    },
+    {
+        "id": "leader-1",
+        "description": "Profile picture of Reverend Ngetich Elius.",
+        "imageUrl": "https://picsum.photos/seed/leader1/200/200",
+        "imageHint": "male leader"
+    },
+    {
+        "id": "leader-2",
+        "description": "Profile picture of Pastor Moureen.",
+        "imageUrl": "https://picsum.photos/seed/leader2/200/200",
+        "imageHint": "female leader"
+    },
+    {
+        "id": "leader-3",
+        "description": "Profile picture of Pastor Jophet Lagat.",
+        "imageUrl": "https://picsum.photos/seed/leader3/200/200",
+        "imageHint": "male pastor"
     }
   ]
 }

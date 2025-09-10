@@ -1,4 +1,4 @@
-import { type LucideIcon, Users, Music, HeartHandshake, Baby, Globe } from "lucide-react";
+import { type LucideIcon, Users, Music, HeartHandshake, Baby, Globe, BookOpen, Handshake, HandHeart, Sparkles, TrendingUp } from "lucide-react";
 
 export const featuredSermon = {
   title: "The Power of Forgiveness",
@@ -105,5 +105,54 @@ export const testimonies = [
       name: "Samuel Kimani",
       quote: "I was welcomed with open arms from my very first visit. This is a place where you can truly belong.",
       imageId: "testimony-1",
+    },
+];
+
+export const leadership = [
+    {
+        name: "Reverend Ngetich Elius",
+        role: "Leader",
+        bio: "Reverend Ngetich Elius serves as the senior leader of AIC Kimalel Saramek Church, guiding the congregation in faith and spiritual growth.",
+        imageId: "leader-1",
+    },
+    {
+        name: "Pastor Moureen",
+        role: "Pastor",
+        bio: "Passionate about discipleship and community, Pastor Moureen leads ministries with a focus on nurturing faith and empowering families.",
+        imageId: "leader-2",
+    },
+    {
+        name: "Pastor Jophet Lagat",
+        role: "Pastor",
+        bio: "Pastor Jophet Lagat is dedicated to teaching God’s Word and supporting the church family in living Christ-centered lives.",
+        imageId: "leader-3",
+    },
+];
+
+export const coreValues = [
+    {
+        title: "Faith",
+        description: "Rooted in God’s Word.",
+        icon: BookOpen,
+    },
+    {
+        title: "Community",
+        description: "Building relationships through love.",
+        icon: Handshake,
+    },
+    {
+        title: "Service",
+        description: "Giving back to society.",
+        icon: HandHeart,
+    },
+    {
+        title: "Integrity",
+        description: "Living by Biblical principles.",
+        icon: Sparkles,
+    },
+    {
+        title: "Growth",
+        description: "Developing spiritually and holistically.",
+        icon: TrendingUp,
     },
 ];

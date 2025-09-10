@@ -9,13 +9,13 @@ import { cn } from '@/lib/utils';
 import { Logo } from '@/components/logo';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Sermons', href: '#sermons' },
-  { name: 'Events', href: '#events' },
-  { name: 'Give', href: '#give' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Sermons', href: '/#sermons' },
+  { name: 'Events', href: '/#events' },
+  { name: 'Give', href: '/#give' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export default function Header() {
@@ -28,6 +28,7 @@ export default function Header() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
