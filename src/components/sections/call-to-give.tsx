@@ -14,8 +14,8 @@ export default function CallToGive() {
           <div className="space-y-2 text-left">
             <p className="flex justify-between"><span>Go to M-Pesa Menu</span></p>
             <p className="flex justify-between"><span>Select 'Lipa na M-Pesa'</span></p>
-            <p className="flex justify-between"><span>Pay Bill:</span> <strong className="text-white">123456</strong></p>
-            <p className="flex justify-between"><span>Account No:</span> <strong className="text-white">Your Name</strong></p>
+            <p className="flex justify-between"><span>Pay Bill:</span> <strong className="text-white">159210</strong></p>
+            <p className="flex justify-between"><span>Account No:</span> <strong className="text-white">AIC Kimalel</strong></p>
           </div>
           <Button size="lg" className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold">
             Give Online
