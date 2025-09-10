@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Facebook, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/logo';
+import { TheeEntityLogo } from '../thee-entity-logo';
 
 const socialLinks = [
   { name: 'YouTube', icon: Youtube, href: '#' },
@@ -60,7 +61,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent" />
-                  <span>Racecourse, Eldoret</span>
+                  <span>Racecourse, Eldoret, Uasin Gishu County</span>
                 </li>
               </ul>
               <div className="flex space-x-4 mt-6">
@@ -75,6 +76,12 @@ export default function Footer() {
 
           <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
             <p>&copy; {new Date().getFullYear()} AIC Kimalel Saramek Church. All Rights Reserved.</p>
+            <div className="flex justify-center items-center gap-2 mt-2">
+              <span>Powered by</span>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <TheeEntityLogo />
+              </a>
+            </div>
           </div>
         </div>
       </div>
