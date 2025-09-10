@@ -51,6 +51,7 @@ type Ministry = {
     description: string;
     icon: LucideIcon;
     imageId: string;
+    href: string;
 };
 
 export const ministries: Ministry[] = [
@@ -59,36 +60,42 @@ export const ministries: Ministry[] = [
         description: "Supporting and equipping men to be Christ-centered leaders in the home, church, and community.",
         icon: Users,
         imageId: "ministry-men",
+        href: "/ministries/mens-fellowship",
     },
     {
         name: "Women’s Fellowship (AIC Women’s Guild)",
         description: "Empowering women through prayer, fellowship, and service.",
         icon: HeartHandshake,
         imageId: "ministry-women",
+        href: "#", // Replace with actual link
     },
     {
         name: "Youth Fellowship (AIC Youth)",
         description: "Building a vibrant generation of young believers rooted in faith and service.",
         icon: Users,
         imageId: "ministry-youth",
+        href: "#", // Replace with actual link
     },
     {
         name: "Choir & Worship Team",
         description: "Leading the congregation in praise and worship through music and song.",
         icon: Music,
         imageId: "ministry-choir",
+        href: "#", // Replace with actual link
     },
     {
         name: "Sunday School / Children’s Ministry",
         description: "Teaching God’s Word to children in an engaging, fun, and age-appropriate way.",
         icon: Baby,
         imageId: "ministry-children",
+        href: "#", // Replace with actual link
     },
     {
         name: "Outreach & Evangelism",
         description: "Spreading the Gospel and serving the community through outreach programs and missions.",
         icon: Globe,
         imageId: "ministry-outreach",
+        href: "#", // Replace with actual link
     },
 ];
 
