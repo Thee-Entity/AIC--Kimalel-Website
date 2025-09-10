@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A vibrant church congregation worshiping together.",
+      "imageUrl": "https://picsum.photos/seed/hero/1920/1080",
+      "imageHint": "church congregation"
+    },
+    {
+      "id": "sermon-thumbnail",
+      "description": "A pastor passionately preaching from a pulpit.",
+      "imageUrl": "https://picsum.photos/seed/sermon1/600/400",
+      "imageHint": "pastor preaching"
+    },
+    {
+      "id": "event-1",
+      "description": "A community of people gathered for a church event.",
+      "imageUrl": "https://picsum.photos/seed/event1/500/300",
+      "imageHint": "community gathering"
+    },
+    {
+      "id": "event-2",
+      "description": "A youth concert with hands raised in worship.",
+      "imageUrl": "https://picsum.photos/seed/event2/500/300",
+      "imageHint": "youth concert"
+    },
+    {
+      "id": "event-3",
+      "description": "A small group studying the bible together.",
+      "imageUrl": "https://picsum.photos/seed/event3/500/300",
+      "imageHint": "bible study"
+    },
+    {
+      "id": "ministry-youth",
+      "description": "A group of diverse young people smiling and laughing.",
+      "imageUrl": "https://picsum.photos/seed/minyouth/400/400",
+      "imageHint": "young people"
+    },
+    {
+      "id": "ministry-choir",
+      "description": "A church choir singing with passion.",
+      "imageUrl": "https://picsum.photos/seed/minchoir/400/400",
+      "imageHint": "choir singing"
+    },
+    {
+      "id": "ministry-women",
+      "description": "A group of women in a supportive fellowship meeting.",
+      "imageUrl": "https://picsum.photos/seed/minwomen/400/400",
+      "imageHint": "women group"
+    },
+    {
+      "id": "ministry-children",
+      "description": "Happy children playing and learning in a classroom.",
+      "imageUrl": "https://picsum.photos/seed/minchild/400/400",
+      "imageHint": "children playing"
+    },
+    {
+      "id": "ministry-outreach",
+      "description": "Volunteers participating in a community service project.",
+      "imageUrl": "https://picsum.photos/seed/minoutreach/400/400",
+      "imageHint": "community service"
+    },
+    {
+      "id": "testimony-1",
+      "description": "A smiling person looking content.",
+      "imageUrl": "https://picsum.photos/seed/test1/200/200",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "testimony-2",
+      "description": "A person looking thoughtful and content.",
+      "imageUrl": "https://picsum.photos/seed/test2/200/200",
+      "imageHint": "person content"
+    },
+    {
+      "id": "testimony-3",
+      "description": "A happy person outdoors.",
+      "imageUrl": "https://picsum.photos/seed/test3/200/200",
+      "imageHint": "person happy"
+    }
+  ]
 }

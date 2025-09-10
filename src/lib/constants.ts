@@ -1,0 +1,109 @@
+import { type LucideIcon, Users, Music, HeartHandshake, Baby, Globe } from "lucide-react";
+
+export const featuredSermon = {
+  title: "The Power of Forgiveness",
+  speaker: "Rev. John Doe",
+  date: "October 29, 2023",
+  summary: "Explore the transformative power of forgiveness as taught in the scriptures and learn how to apply it in your daily life for spiritual freedom and healing.",
+  transcript: `
+    "Good morning, beloved. Today, we gather to reflect on a cornerstone of our faith, a principle so profound yet often so challenging: the power of forgiveness.
+    In the book of Matthew, chapter 6, verse 14, Jesus tells us, 'For if you forgive other people when they sin against you, your heavenly Father will also forgive you.' This is not merely a suggestion; it is a divine instruction that holds the key to our spiritual well-being.
+    What does it truly mean to forgive? It is not about condoning the wrong that was done to us. It is not about forgetting the pain. Forgiveness is an act of the will, a choice to release the burden of bitterness and resentment from our hearts. It is choosing to hand over justice to God, who is the only perfect judge.
+    Think about a time someone wronged you. The anger, the hurt... it can feel like a heavy chain. Holding onto that unforgiveness doesn't punish the other person; it keeps us imprisoned. Forgiveness is the key that unlocks our own chains.
+    Peter asked Jesus, 'Lord, how many times shall I forgive my brother or sister who sins against me? Up to seven times?' Jesus answered, 'I tell you, not seven times, but seventy-seven times.' This illustrates that forgiveness is not a one-time event but a continuous attitude, a way of life.
+    When we forgive, we mirror the grace that has been shown to us. Colossians 3:13 says, 'Bear with each other and forgive one another if any of you has a grievance against someone. Forgive as the Lord forgave you.' We have been forgiven an immeasurable debt by our Father in heaven through the sacrifice of His Son. How can we then withhold forgiveness from others for the comparatively small offenses against us?
+    The journey of forgiveness begins with a prayer. Ask God to soften your heart. Ask for the strength to let go. It may not be easy, and it may not happen overnight, but with each step, you will find a new sense of peace and freedom. You will find healing. You will find yourself drawn closer to the heart of God.
+    Let us pray. Heavenly Father, teach us to forgive as you have forgiven us. Release us from the chains of bitterness and fill our hearts with Your peace and Your love. Amen."
+  `,
+  imageId: "sermon-thumbnail",
+};
+
+export const upcomingEvents = [
+  {
+    date: new Date(2024, 10, 12),
+    title: "Youth Worship Night",
+    description: "A special night of worship, prayer, and fellowship for our youth. All are welcome!",
+    imageId: "event-1",
+  },
+  {
+    date: new Date(2024, 10, 18),
+    title: "Community Food Drive",
+    description: "Join us as we partner with local organizations to collect food for families in need.",
+    imageId: "event-2",
+  },
+  {
+    date: new Date(2024, 11, 3),
+    title: "Annual Christmas Cantata",
+    description: "Celebrate the season with beautiful music from our choir and orchestra.",
+    imageId: "event-3",
+  },
+  {
+    date: new Date(2025, 0, 7),
+    title: "New Year Prayer Breakfast",
+    description: "Start the new year right with a time of prayer, reflection, and community breakfast.",
+    imageId: "event-1",
+  },
+];
+
+type Ministry = {
+    name: string;
+    description: string;
+    icon: LucideIcon;
+    imageId: string;
+};
+
+export const ministries: Ministry[] = [
+    {
+        name: "Youth Ministry",
+        description: "Engaging our young people in faith and fellowship.",
+        icon: Users,
+        imageId: "ministry-youth",
+    },
+    {
+        name: "Music & Choir",
+        description: "Leading the congregation in worship through song.",
+        icon: Music,
+        imageId: "ministry-choir",
+    },
+    {
+        name: "Women's Fellowship",
+        description: "Empowering women through community and scripture.",
+        icon: HeartHandshake,
+        imageId: "ministry-women",
+    },
+    {
+        name: "Children's Church",
+        description: "Nurturing the next generation in a fun, safe environment.",
+        icon: Baby,
+        imageId: "ministry-children",
+    },
+    {
+        name: "Community Outreach",
+        description: "Serving our neighbors and sharing the love of Christ.",
+        icon: Globe,
+        imageId: "ministry-outreach",
+    },
+];
+
+export const testimonies = [
+    {
+      name: "Jane Smith",
+      quote: "This church has been my rock. The community here is a true family, and I've grown so much in my faith.",
+      imageId: "testimony-1",
+    },
+    {
+      name: "David Otieno",
+      quote: "Finding AIC Kimalel was a turning point for me. The teachings are so relevant, and I feel God's presence every Sunday.",
+      imageId: "testimony-2",
+    },
+    {
+      name: "Emily Wang",
+      quote: "The youth ministry has been amazing for my kids. They love coming to church and are building a strong foundation in Christ.",
+      imageId: "testimony-3",
+    },
+    {
+      name: "Samuel Kimani",
+      quote: "I was welcomed with open arms from my very first visit. This is a place where you can truly belong.",
+      imageId: "testimony-1",
+    },
+];
