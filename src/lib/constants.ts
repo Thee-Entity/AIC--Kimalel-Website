@@ -1,3 +1,4 @@
+
 import { type LucideIcon, Users, Music, HeartHandshake, Baby, Globe, BookOpen, Handshake, HandHeart, Sparkles, TrendingUp } from "lucide-react";
 
 export const featuredSermon = {
@@ -54,36 +55,43 @@ type Ministry = {
 
 export const ministries: Ministry[] = [
     {
-        name: "Youth Ministry",
-        description: "Engaging our young people in faith and fellowship.",
+        name: "Men’s Fellowship (AIC CBF)",
+        description: "Supporting and equipping men to be Christ-centered leaders in the home, church, and community.",
         icon: Users,
-        imageId: "ministry-youth",
+        imageId: "ministry-men",
     },
     {
-        name: "Music & Choir",
-        description: "Leading the congregation in worship through song.",
-        icon: Music,
-        imageId: "ministry-choir",
-    },
-    {
-        name: "Women's Fellowship",
-        description: "Empowering women through community and scripture.",
+        name: "Women’s Fellowship (AIC Women’s Guild)",
+        description: "Empowering women through prayer, fellowship, and service.",
         icon: HeartHandshake,
         imageId: "ministry-women",
     },
     {
-        name: "Children's Church",
-        description: "Nurturing the next generation in a fun, safe environment.",
+        name: "Youth Fellowship (AIC Youth)",
+        description: "Building a vibrant generation of young believers rooted in faith and service.",
+        icon: Users,
+        imageId: "ministry-youth",
+    },
+    {
+        name: "Choir & Worship Team",
+        description: "Leading the congregation in praise and worship through music and song.",
+        icon: Music,
+        imageId: "ministry-choir",
+    },
+    {
+        name: "Sunday School / Children’s Ministry",
+        description: "Teaching God’s Word to children in an engaging, fun, and age-appropriate way.",
         icon: Baby,
         imageId: "ministry-children",
     },
     {
-        name: "Community Outreach",
-        description: "Serving our neighbors and sharing the love of Christ.",
+        name: "Outreach & Evangelism",
+        description: "Spreading the Gospel and serving the community through outreach programs and missions.",
         icon: Globe,
         imageId: "ministry-outreach",
     },
 ];
+
 
 export const testimonies = [
     {

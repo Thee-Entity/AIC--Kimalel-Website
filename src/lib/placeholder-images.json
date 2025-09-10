@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -43,34 +44,40 @@
       "imageHint": "bible study"
     },
     {
-      "id": "ministry-youth",
-      "description": "A group of diverse young people smiling and laughing.",
-      "imageUrl": "https://picsum.photos/seed/minyouth/400/400",
-      "imageHint": "young people"
+      "id": "ministry-men",
+      "description": "A group of men in a supportive fellowship meeting.",
+      "imageUrl": "https://picsum.photos/seed/minmen/400/400",
+      "imageHint": "men fellowship"
     },
     {
-      "id": "ministry-choir",
-      "description": "A church choir singing with passion.",
-      "imageUrl": "https://picsum.photos/seed/minchoir/400/400",
-      "imageHint": "choir singing"
+        "id": "ministry-youth",
+        "description": "A group of diverse young people smiling and laughing.",
+        "imageUrl": "https://picsum.photos/seed/minyouth/400/400",
+        "imageHint": "young people"
     },
     {
-      "id": "ministry-women",
-      "description": "A group of women in a supportive fellowship meeting.",
-      "imageUrl": "https://picsum.photos/seed/minwomen/400/400",
-      "imageHint": "women group"
+        "id": "ministry-choir",
+        "description": "A church choir singing with passion.",
+        "imageUrl": "https://picsum.photos/seed/minchoir/400/400",
+        "imageHint": "choir singing"
     },
     {
-      "id": "ministry-children",
-      "description": "Happy children playing and learning in a classroom.",
-      "imageUrl": "https://picsum.photos/seed/minchild/400/400",
-      "imageHint": "children playing"
+        "id": "ministry-women",
+        "description": "A group of women in a supportive fellowship meeting.",
+        "imageUrl": "https://picsum.photos/seed/minwomen/400/400",
+        "imageHint": "women group"
     },
     {
-      "id": "ministry-outreach",
-      "description": "Volunteers participating in a community service project.",
-      "imageUrl": "https://picsum.photos/seed/minoutreach/400/400",
-      "imageHint": "community service"
+        "id": "ministry-children",
+        "description": "Happy children playing and learning in a classroom.",
+        "imageUrl": "https://picsum.photos/seed/minchild/400/400",
+        "imageHint": "children playing"
+    },
+    {
+        "id": "ministry-outreach",
+        "description": "Volunteers participating in a community service project.",
+        "imageUrl": "https://picsum.photos/seed/minoutreach/400/400",
+        "imageHint": "community service"
     },
     {
       "id": "testimony-1",
@@ -101,6 +108,18 @@
         "description": "A church congregation with hands raised in worship.",
         "imageUrl": "https://picsum.photos/seed/serviceshero/1920/1080",
         "imageHint": "worship service"
+    },
+    {
+        "id": "ministries-hero",
+        "description": "A diverse group of people in fellowship.",
+        "imageUrl": "https://picsum.photos/seed/ministrieshero/1920/1080",
+        "imageHint": "church fellowship"
+    },
+    {
+        "id": "ministry-highlight",
+        "description": "Hands of different people joined together, showing unity.",
+        "imageUrl": "https://picsum.photos/seed/minhighlight/1200/400",
+        "imageHint": "hands together"
     },
     {
         "id": "leader-1",

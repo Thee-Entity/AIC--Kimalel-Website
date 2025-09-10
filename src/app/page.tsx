@@ -1,3 +1,4 @@
+
 import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
 import QuickInfo from '@/components/sections/quick-info';

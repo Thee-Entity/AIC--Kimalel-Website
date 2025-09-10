@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,6 +8,9 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Ministries() {
+  // Take only the first 5 for the homepage preview
+  const previewMinistries = ministries.slice(0, 5);
+
   return (
     <section id="ministries" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -18,14 +22,14 @@ export default function Ministries() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {ministries.map((ministry) => {
+          {previewMinistries.map((ministry) => {
             const ministryImage = PlaceHolderImages.find(p => p.id === ministry.imageId);
             return (
               <Card key={ministry.name} className="group overflow-hidden relative text-white text-center flex items-end justify-center h-80 transition-all duration-300 ease-in-out hover:shadow-2xl">
                 {ministryImage && (
                   <Image
                     src={ministryImage.imageUrl}
-                    alt={ministryImage.description}
+                    alt={ministry.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     data-ai-hint={ministryImage.imageHint}
@@ -50,7 +54,7 @@ export default function Ministries() {
         </div>
         <div className="text-center mt-12">
             <Button size="lg" asChild className="rounded-full bg-primary hover:bg-primary/90">
-                <Link href="#">
+                <Link href="/ministries">
                     Explore All Ministries
                     <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
