@@ -16,7 +16,7 @@ export default function ServicesHero() {
                     data-ai-hint={servicesHeroImage.imageHint}
                 />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-primary/70"></div>
             <div className="relative z-10 px-4 flex flex-col items-center">
                 <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-white">
                     Worship With Us

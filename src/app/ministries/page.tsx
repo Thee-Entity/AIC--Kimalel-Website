@@ -8,7 +8,7 @@ import MinistriesCta from '@/components/sections/ministries-cta';
 
 export default function MinistriesPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main>
         <MinistriesHero />

@@ -4,21 +4,21 @@
 
 @layer base {
   :root {
-    --background: 220 13% 90%; /* #e2e4e9 */
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%; /* #FFFFFF - White */
+    --background: 220 13% 96%; /* Lighter Gray */
+    --foreground: 222 47% 11%; /* Midnight Navy */
+    --card: 0 0% 100%; /* White */
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 222 47% 11%; /* #0F172A - Midnight Navy */
+    --primary: 222 47% 11%; /* Midnight Navy */
     --primary-foreground: 0 0% 98%;
-    --secondary: 222 40% 15%; /* #1A243A - Darker Navy for secondary elements */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 220 14% 90%; /* #E5E7EB - Warm Gray */
+    --secondary: 220 14% 94%; /* Light Gray */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 90%; /* Warm Gray */
     --muted-foreground: 220 9% 45%;
-    --accent: 45 68% 47%; /* #C9A227 - Elegant Gold */
+    --accent: 45 68% 47%; /* Elegant Gold */
     --accent-foreground: 222 47% 11%;
-    --highlight: 43 56% 91%; /* #F5E6CC - Soft Champagne */
+    --highlight: 43 56% 91%; /* Soft Champagne */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 13% 85%;
@@ -32,21 +32,21 @@
   }
 
   .dark {
-    --background: 222 47% 11%; /* #0F172A - Midnight Navy */
+    --background: 222 47% 11%; /* Midnight Navy */
     --foreground: 0 0% 98%;
     --card: 222 47% 11%;
     --card-foreground: 0 0% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 0 0% 98%;
-    --primary: 222 47% 11%; /* #0F172A - Midnight Navy */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 222 40% 15%; /* #1A243A - Darker Navy */
+    --primary: 0 0% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 40% 15%; /* Darker Navy */
     --secondary-foreground: 0 0% 98%;
     --muted: 222 40% 15%; /* Darker warm gray */
     --muted-foreground: 220 10% 65%;
-    --accent: 45 68% 47%; /* #C9A227 - Elegant Gold */
+    --accent: 45 68% 47%; /* Elegant Gold */
     --accent-foreground: 222 47% 11%;
-    --highlight: 43 56% 91%; /* #F5E6CC - Soft Champagne */
+    --highlight: 43 56% 91%; /* Soft Champagne */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 222 40% 20%;

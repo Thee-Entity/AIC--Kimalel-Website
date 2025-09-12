@@ -50,6 +50,7 @@ export default function Header() {
     isHomePage && !isScrolled ? 'text-black' : 'text-primary-foreground';
   const logoColor =
     isHomePage && !isScrolled ? 'text-black' : 'text-primary-foreground';
+  const mobileMenuButtonColor = isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
 
   return (
     <header className={headerClasses} id="home">
@@ -87,7 +88,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(defaultLinkColor, "hover:bg-white/10")}>
+                <Button variant="ghost" size="icon" className={cn(mobileMenuButtonColor, "hover:bg-white/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>

@@ -36,10 +36,10 @@ export default function NewsletterSignup() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="bg-secondary py-16">
+    <section id="contact" className="bg-primary py-16 text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold font-headline mb-2 text-primary-foreground">Stay Connected</h2>
+          <h2 className="text-3xl font-bold font-headline mb-2">Stay Connected</h2>
           <p className="text-gray-300 mb-6">
             Subscribe to our weekly devotionals & church news.
           </p>

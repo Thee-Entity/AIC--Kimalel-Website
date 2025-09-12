@@ -5,11 +5,11 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Leadership() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-secondary">
        <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-white relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-primary relative inline-block">
             Our Leadership
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent/50 rounded-full glow-gold"></span>
           </h2>
@@ -18,7 +18,7 @@ export default function Leadership() {
           {leadership.map((leader) => {
             const leaderImage = PlaceHolderImages.find(p => p.id === leader.imageId);
             return (
-              <Card key={leader.name} className="bg-gray-800/50 border-accent/20 border backdrop-blur-sm text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:shadow-accent/20">
+              <Card key={leader.name} className="bg-card border-accent/20 border backdrop-blur-sm text-center group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:shadow-accent/20">
                 <CardContent className="p-6">
                   {leaderImage && (
                     <div className="relative h-40 w-40 mx-auto mb-4">
@@ -34,8 +34,8 @@ export default function Leadership() {
                     </div>
                   )}
                   <h3 className="text-xl font-bold font-headline text-accent">{leader.name}</h3>
-                  <p className="text-gray-400 mb-2">{leader.role}</p>
-                  <p className="text-gray-300 text-sm">{leader.bio}</p>
+                  <p className="text-muted-foreground mb-2">{leader.role}</p>
+                  <p className="text-foreground text-sm">{leader.bio}</p>
                 </CardContent>
               </Card>
             );

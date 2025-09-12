@@ -10,7 +10,7 @@ import WaysToGive from "@/components/sections/support/ways-to-give";
 
 export default function SupportPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 text-gray-200">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main>
         <SupportHero />

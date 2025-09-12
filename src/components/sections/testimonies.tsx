@@ -28,7 +28,7 @@ export default function Testimonies() {
               return (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card className="h-full">
+                    <Card className="h-full bg-card">
                       <CardContent className="flex flex-col items-center text-center p-6">
                         {testimonyImage && (
                           <Avatar className="h-24 w-24 mb-4 border-4 border-accent">
@@ -37,7 +37,7 @@ export default function Testimonies() {
                           </Avatar>
                         )}
                         <p className="text-muted-foreground italic mb-4">"{testimonial.quote}"</p>
-                        <h3 className="font-bold text-lg font-headline">{testimonial.name}</h3>
+                        <h3 className="font-bold text-lg font-headline text-primary">{testimonial.name}</h3>
                       </CardContent>
                     </Card>
                   </div>

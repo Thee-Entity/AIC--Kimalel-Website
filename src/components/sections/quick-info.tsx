@@ -45,7 +45,7 @@ export default function QuickInfo() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {infoItems.map((item) => (
-            <Card key={item.title} className="group text-center bg-white dark:bg-card border-2 border-transparent hover:border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <Card key={item.title} className="group text-center bg-card dark:bg-card border-2 border-transparent hover:border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="items-center">
                 <div className="p-4 bg-muted text-muted-foreground rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                   <item.icon className="h-8 w-8" />

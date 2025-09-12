@@ -21,14 +21,14 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-300 dark:bg-gray-900 border-t border-accent/20">
+    <footer className="bg-primary text-primary-foreground border-t border-accent/20">
       <div className="relative py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Left Column */}
             <div className="space-y-4">
-              <Logo />
-              <p className="text-sm text-gray-400">
+              <Logo className="text-primary-foreground" />
+              <p className="text-sm text-gray-300">
                 Rooted in Christ, Growing in Faith, Serving the World.
               </p>
             </div>
@@ -39,7 +39,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="hover:text-accent transition-colors">
+                    <Link href={link.href} className="hover:text-accent transition-colors text-gray-300">
                       {link.name}
                     </Link>
                   </li>
@@ -57,7 +57,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent" />
-                  <a href="mailto:info@aickimalel.org" className="hover:text-accent transition-colors">info@aickimalel.org</a>
+                  <a href="mailto:info@aickimalel.org" className="hover:text-accent transition-colors text-gray-300">info@aickimalel.org</a>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent" />

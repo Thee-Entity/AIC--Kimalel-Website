@@ -9,9 +9,9 @@ export default function FeaturedSermon() {
   const sermonImage = PlaceHolderImages.find(p => p.id === 'sermon-thumbnail');
 
   return (
-    <section id="sermons" className="py-16 md:py-24 bg-muted">
+    <section id="sermons" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
-        <Card className="overflow-hidden shadow-lg border-none bg-white">
+        <Card className="overflow-hidden shadow-lg border-none bg-card">
           <div className="grid md:grid-cols-2">
             <div className="relative aspect-video md:aspect-auto">
               {sermonImage && (
@@ -30,7 +30,7 @@ export default function FeaturedSermon() {
               <p className="text-muted-foreground mb-4">
                 {featuredSermon.speaker} • {featuredSermon.date}
               </p>
-              <p className="mb-6">{featuredSermon.summary}</p>
+              <p className="mb-6 text-foreground">{featuredSermon.summary}</p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold">
                   Watch Sermon

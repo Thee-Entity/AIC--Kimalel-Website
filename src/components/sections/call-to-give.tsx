@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CallToGive() {
   return (
@@ -17,8 +18,8 @@ export default function CallToGive() {
             <p className="flex justify-between"><span>Pay Bill:</span> <strong className="text-white">159210</strong></p>
             <p className="flex justify-between"><span>Account No:</span> <strong className="text-white">AIC Kimalel</strong></p>
           </div>
-          <Button size="lg" className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold">
-            Give Online
+          <Button size="lg" className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold" asChild>
+            <Link href="/support">Give Online</Link>
           </Button>
         </div>
       </div>

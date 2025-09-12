@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function UpcomingEvents() {
   return (
-    <section id="events" className="py-16 md:py-24 bg-highlight dark:bg-highlight/10">
+    <section id="events" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Kimalel</h2>
@@ -29,7 +29,7 @@ export default function UpcomingEvents() {
               return (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2">
-                    <Card className="overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white">
+                    <Card className="overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card">
                       <div className="relative aspect-[4/3]">
                         {eventImage && (
                           <Image

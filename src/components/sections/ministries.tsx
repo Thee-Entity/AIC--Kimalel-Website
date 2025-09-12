@@ -13,10 +13,10 @@ export default function Ministries() {
   const previewMinistries = ministries.slice(0, 5);
 
   return (
-    <section id="ministries" className="py-16 md:py-24 bg-background">
+    <section id="ministries" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">Explore Our Ministries</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-primary">Explore Our Ministries</h2>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Find your place and get involved in a community that fits you.
           </p>
@@ -54,7 +54,7 @@ export default function Ministries() {
           })}
         </div>
         <div className="text-center mt-12">
-            <Button size="lg" asChild className="rounded-full bg-primary hover:bg-primary/90">
+            <Button size="lg" asChild className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
                 <Link href="/ministries">
                     Explore All Ministries
                     <ArrowRight className="ml-2 h-5 w-5" />
