@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -21,30 +22,40 @@ const navLinks = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
+    if (!isHomePage) {
+      setIsScrolled(true);
+      return;
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    handleScroll(); // Check on initial render
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
+
+  const headerClasses = cn(
+    'sticky top-0 z-50 w-full transition-all duration-300',
+    {
+      'bg-transparent': isHomePage && !isScrolled,
+      'bg-primary/80 backdrop-blur-sm shadow-md': isScrolled,
+      'bg-primary': !isHomePage
+    }
+  );
+
+  const linkColor = isScrolled || !isHomePage ? 'text-primary-foreground' : 'text-black';
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled ? 'bg-primary/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
-      )}
-      id="home"
-    >
+    <header className={headerClasses} id="home">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
-          <Logo
-            className={cn(
-              isScrolled ? 'text-primary-foreground' : 'text-black',
-            )}
-          />
+          <Logo className={linkColor} />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -54,7 +65,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  isScrolled ? 'text-primary-foreground' : 'text-black'
+                  linkColor
                 )}
               >
                 {link.name}
@@ -76,7 +87,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-primary-foreground" : "text-black", "hover:bg-white/10")}>
+                <Button variant="ghost" size="icon" className={cn(linkColor, "hover:bg-white/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -84,7 +95,7 @@ export default function Header() {
               <SheetContent side="left" className="bg-primary text-primary-foreground p-0 w-3/4">
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between p-4 border-b border-white/20">
-                        <Logo />
+                        <Logo className="text-primary-foreground" />
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon">
                                 <X className="h-6 w-6" />
