@@ -4,6 +4,9 @@ import { z } from 'zod';
 import { askAiAboutSermon } from '@/ai/flows/ai-sermon-assistant';
 
 export async function handleSermonQuery(sermonTranscript: string, question: string) {
+  if (!process.env.GEMINI_API_KEY) {
+    return { success: false, error: 'The AI assistant is not configured. Please add your Google AI API key.' };
+  }
   if (!question) {
     return { success: false, error: 'Please enter a question.' };
   }
