@@ -39,8 +39,8 @@ export default function NewsletterSignup() {
     <section id="contact" className="bg-secondary py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold font-headline mb-2">Stay Connected</h2>
-          <p className="text-muted-foreground mb-6">
+          <h2 className="text-3xl font-bold font-headline mb-2 text-primary-foreground">Stay Connected</h2>
+          <p className="text-gray-300 mb-6">
             Subscribe to our weekly devotionals & church news.
           </p>
           <form action={formAction} className="relative">
@@ -49,13 +49,10 @@ export default function NewsletterSignup() {
               name="email"
               placeholder="Enter your email address"
               required
-              className="w-full h-14 pl-6 pr-36 rounded-full text-base focus-visible:ring-accent focus-visible:ring-offset-0 transition-shadow focus:shadow-[0_0_15px_2px_theme(colors.accent/40%)]"
+              className="w-full h-14 pl-6 pr-36 rounded-full text-base bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus-visible:ring-accent focus-visible:ring-offset-0 transition-shadow focus:shadow-[0_0_15px_2px_theme(colors.accent/40%)]"
             />
             <SubmitButton />
           </form>
-          {/* <p aria-live="polite" className="sr-only" role="status">
-            {state?.message}
-          </p> */}
         </div>
       </div>
     </section>
