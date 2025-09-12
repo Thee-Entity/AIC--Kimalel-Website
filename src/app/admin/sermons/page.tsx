@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { SermonEditDialog } from "@/components/admin/sermons/sermon-edit-dialog";
 
 const sermons = [
   {
@@ -39,10 +40,12 @@ export default function SermonsAdminPage() {
             <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Sermons</h1>
             <p className="text-gray-600 dark:text-gray-400">Manage all church sermons here.</p>
         </div>
-        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow">
-          <PlusCircle className="mr-2 h-5 w-5" />
-          Add New Sermon
-        </Button>
+        <SermonEditDialog>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow">
+            <PlusCircle className="mr-2 h-5 w-5" />
+            Add New Sermon
+          </Button>
+        </SermonEditDialog>
       </div>
 
       <Card className="bg-white dark:bg-gray-800">
