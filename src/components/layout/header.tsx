@@ -26,36 +26,36 @@ export default function Header() {
   const isHomePage = pathname === '/';
 
   useEffect(() => {
-    if (!isHomePage) {
-      setIsScrolled(true);
-      return;
-    }
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    handleScroll(); // Check on initial render
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (isHomePage) {
+      handleScroll(); // Check on initial render
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      setIsScrolled(true);
+    }
   }, [isHomePage]);
 
   const headerClasses = cn(
     'sticky top-0 z-50 w-full transition-all duration-300',
-    {
-      'bg-transparent': isHomePage && !isScrolled,
-      'bg-primary/80 backdrop-blur-sm shadow-md': isScrolled,
-      'bg-primary': !isHomePage
-    }
+    isHomePage && !isScrolled
+      ? 'bg-transparent'
+      : 'bg-primary/80 backdrop-blur-sm shadow-md'
   );
 
-  const linkColor = isScrolled || !isHomePage ? 'text-primary-foreground' : 'text-black';
+  const defaultLinkColor =
+    isHomePage && !isScrolled ? 'text-black' : 'text-primary-foreground';
+  const logoColor =
+    isHomePage && !isScrolled ? 'text-black' : 'text-primary-foreground';
 
   return (
     <header className={headerClasses} id="home">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
-          <Logo className={linkColor} />
+          <Logo className={logoColor} />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -65,7 +65,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  linkColor
+                  pathname === link.href ? 'text-accent' : defaultLinkColor
                 )}
               >
                 {link.name}
@@ -87,7 +87,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(linkColor, "hover:bg-white/10")}>
+                <Button variant="ghost" size="icon" className={cn(defaultLinkColor, "hover:bg-white/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -108,7 +108,10 @@ export default function Header() {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="text-lg font-medium transition-colors hover:text-accent"
+                        className={cn(
+                          'text-lg font-medium transition-colors hover:text-accent',
+                          pathname === link.href ? 'text-accent' : 'text-primary-foreground'
+                        )}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {link.name}
