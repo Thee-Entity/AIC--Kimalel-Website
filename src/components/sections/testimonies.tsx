@@ -6,11 +6,11 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Testimonies() {
   return (
-    <section className="py-16 md:py-24 bg-secondary">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 relative">
         <div className="absolute inset-0 bg-no-repeat bg-center opacity-5"></div>
         <div className="text-center mb-12 relative">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">Stories of Faith</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-primary">Stories of Faith</h2>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Hear how God is moving in the lives of our church family.
           </p>
