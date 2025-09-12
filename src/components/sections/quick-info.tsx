@@ -1,7 +1,9 @@
 
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, MapPin, Youtube } from 'lucide-react';
+import Link from "next/link";
 
 const infoItems = [
   {
@@ -12,7 +14,8 @@ const infoItems = [
       { label: "Kiswahili Service:", value: "10:40 AM – 12:00 PM" },
       { label: "Sunday School for kids available during both services.", value: "" }
     ],
-    buttonText: "Plan Your Visit"
+    buttonText: "Plan Your Visit",
+    href: "/contact",
   },
   {
     icon: MapPin,
@@ -21,7 +24,8 @@ const infoItems = [
       { label: "AIC Kimalel Saramek Church,", value: "" },
       { label: "Racecourse, Eldoret.", value: "" }
     ],
-    buttonText: "Get Directions"
+    buttonText: "Get Directions",
+    href: "https://maps.app.goo.gl/t2UotCaY79vicXJj9",
   },
   {
     icon: Youtube,
@@ -30,7 +34,8 @@ const infoItems = [
       { label: "Join our services live every Sunday.", value: "" },
       { label: "Available on YouTube and Facebook.", value: "" }
     ],
-    buttonText: "Watch Live Now"
+    buttonText: "Watch Live Now",
+    href: "#",
   }
 ];
 
@@ -55,8 +60,8 @@ export default function QuickInfo() {
                         </p>
                     ))}
                 </div>
-                <Button variant={item.title === 'Service Times' ? 'default' : 'outline'} className="rounded-full group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-colors duration-300">
-                    {item.buttonText}
+                <Button asChild variant={item.title === 'Service Times' ? 'default' : 'outline'} className="rounded-full group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-colors duration-300">
+                    <Link href={item.href} target={item.href.startsWith('http') ? '_blank' : '_self'}>{item.buttonText}</Link>
                 </Button>
               </CardContent>
             </Card>

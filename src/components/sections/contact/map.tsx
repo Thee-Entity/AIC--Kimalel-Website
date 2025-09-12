@@ -21,7 +21,7 @@ export default function ContactMap() {
                 ></iframe>
             </div>
             <Button asChild size="lg" className="mt-8">
-                <Link href="https://maps.app.goo.gl/H4fR3F8uQbQZz9v59" target="_blank">Get Directions</Link>
+                <Link href="https://maps.app.goo.gl/t2UotCaY79vicXJj9" target="_blank">Get Directions</Link>
             </Button>
         </div>
     </section>
