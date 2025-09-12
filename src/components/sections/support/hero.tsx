@@ -1,4 +1,3 @@
-
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 
@@ -19,7 +18,7 @@ export default function SupportHero() {
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/60 to-transparent"></div>
             <div className="relative z-10 px-4 flex flex-col items-center">
-                <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-accent glow-gold-lg">
+                <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-white">
                     Support AIC Kimalel Saramek Church
                 </h1>
                 <p className="text-lg md:text-xl max-w-3xl mx-auto">

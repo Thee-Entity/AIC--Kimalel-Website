@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
@@ -17,7 +16,7 @@ export default function MensFellowshipGallery() {
       <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-accent mb-4">Gallery</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-white mb-4">Gallery</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {galleryImages.map((id, index) => {

@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Users, Globe, Mic } from "lucide-react";
 
@@ -15,7 +14,7 @@ export default function MensFellowshipPrograms() {
       <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-accent mb-4">Programs & Activities</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-white mb-4">Programs & Activities</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {programs.map((program) => (

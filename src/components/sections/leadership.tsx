@@ -9,7 +9,7 @@ export default function Leadership() {
        <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-accent relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-white relative inline-block">
             Our Leadership
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent/50 rounded-full glow-gold"></span>
           </h2>

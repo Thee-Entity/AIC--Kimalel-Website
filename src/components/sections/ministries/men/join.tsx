@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useFormState, useFormStatus } from 'react-dom';
@@ -35,7 +34,7 @@ export default function MensFellowshipJoin() {
     <section className="py-20">
       <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold font-headline text-accent mb-4">
+        <h2 className="text-3xl font-bold font-headline text-white mb-4">
             Every man has a place in God’s work. Join the Men’s Fellowship today.
         </h2>
         <form action={formAction} className="max-w-xl mx-auto mt-8 space-y-4">

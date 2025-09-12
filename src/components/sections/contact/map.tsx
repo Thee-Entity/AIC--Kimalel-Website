@@ -6,7 +6,7 @@ export default function ContactMap() {
     <section className="py-20 bg-gray-900">
         <div className="section-divider mb-20"></div>
         <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold font-headline text-accent mb-8">
+            <h2 className="text-3xl font-bold font-headline text-white mb-8">
                 Find Us
             </h2>
             <div className="relative w-full h-96 rounded-lg overflow-hidden border-2 border-accent/30">

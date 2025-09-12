@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -57,7 +56,7 @@ export default function WomensFellowshipHero() {
         </div>
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/60 to-transparent"></div>
       <div className="relative z-10 px-4 flex flex-col items-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-accent glow-gold-lg">
+        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-white">
             Women’s Fellowship (AIC Women’s Guild)
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto">

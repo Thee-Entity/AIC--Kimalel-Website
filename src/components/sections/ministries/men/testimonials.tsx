@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -13,7 +12,7 @@ export default function MensFellowshipTestimonials() {
       <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12 relative">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-accent mb-4">Impact Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline text-white mb-4">Impact Stories</h2>
         </div>
         <Carousel
           opts={{

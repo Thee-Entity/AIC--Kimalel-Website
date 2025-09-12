@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Banknote, Building, Smartphone } from "lucide-react";
@@ -35,7 +34,7 @@ export default function WaysToGive() {
         <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-accent mb-4">Ways to Give</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-white mb-4">Ways to Give</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {givingMethods.map((method) => (
