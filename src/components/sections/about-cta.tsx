@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { TheeEntityLogo } from "../thee-entity-logo";
 import Link from "next/link";
@@ -22,9 +23,7 @@ export default function AboutCta() {
         </Button>
         <div className="flex justify-center items-center gap-2 mt-8">
             <span className="text-sm text-gray-400">Powered by</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
             <TheeEntityLogo />
-            </a>
         </div>
       </div>
     </section>

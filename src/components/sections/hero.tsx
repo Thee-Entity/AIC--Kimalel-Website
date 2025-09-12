@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -84,9 +85,7 @@ export default function Hero() {
         </div>
         <div className="flex justify-center items-center gap-2 mt-8 animate-fade-in-up animation-delay-300">
             <span className="text-sm text-gray-400">Powered by</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-              <TheeEntityLogo className="text-white"/>
-            </a>
+            <TheeEntityLogo className="text-white"/>
         </div>
       </div>
 

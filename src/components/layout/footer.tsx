@@ -78,9 +78,7 @@ export default function Footer() {
             <p>&copy; {new Date().getFullYear()} AIC Kimalel Saramek Church. All Rights Reserved.</p>
             <div className="flex justify-center items-center gap-2 mt-2">
               <span>Powered by</span>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                <TheeEntityLogo />
-              </a>
+              <TheeEntityLogo />
             </div>
           </div>
         </div>
