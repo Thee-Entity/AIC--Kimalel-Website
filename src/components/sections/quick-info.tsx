@@ -50,17 +50,17 @@ export default function QuickInfo() {
                 <div className="p-4 bg-primary text-primary-foreground rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                   <item.icon className="h-8 w-8" />
                 </div>
-                <CardTitle className="font-headline text-2xl pt-4">{item.title}</CardTitle>
+                <CardTitle className="font-headline text-2xl pt-4 text-primary">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-muted-foreground mb-6 min-h-[6rem]">
+                <div className="text-gray-600 dark:text-gray-400 mb-6 min-h-[6rem]">
                     {item.lines.map((line, index) => (
                         <p key={index} className="text-sm">
                             <strong>{line.label}</strong> {line.value}
                         </p>
                     ))}
                 </div>
-                <Button asChild variant={item.title === 'Service Times' ? 'default' : 'outline'} className="rounded-full group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-colors duration-300">
+                <Button asChild variant={'outline'} className="rounded-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors duration-300">
                     <Link href={item.href} target={item.href.startsWith('http') ? '_blank' : '_self'}>{item.buttonText}</Link>
                 </Button>
               </CardContent>

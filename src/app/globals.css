@@ -18,12 +18,12 @@
     --muted-foreground: 220 9% 45%;
     --accent: 45 68% 47%; /* #C9A227 - Elegant Gold */
     --accent-foreground: 222 47% 11%;
+    --highlight: 43 56% 91%; /* #F5E6CC - Soft Champagne */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 13% 85%;
     --input: 220 13% 85%;
     --ring: 45 68% 47%;
-    --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -46,6 +46,7 @@
     --muted-foreground: 220 10% 65%;
     --accent: 45 68% 47%; /* #C9A227 - Elegant Gold */
     --accent-foreground: 222 47% 11%;
+    --highlight: 43 56% 91%; /* #F5E6CC - Soft Champagne */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 222 40% 20%;

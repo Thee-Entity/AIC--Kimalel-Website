@@ -8,10 +8,10 @@ import Link from "next/link";
 
 export default function UpcomingEvents() {
   return (
-    <section id="events" className="py-16 md:py-24 bg-white dark:bg-card">
+    <section id="events" className="py-16 md:py-24 bg-highlight dark:bg-highlight/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">What’s Happening at Kimalel</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Kimalel</h2>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Join us for fellowship, growth, and community events.
           </p>
@@ -29,7 +29,7 @@ export default function UpcomingEvents() {
               return (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2">
-                    <Card className="overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <Card className="overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white">
                       <div className="relative aspect-[4/3]">
                         {eventImage && (
                           <Image
@@ -46,7 +46,7 @@ export default function UpcomingEvents() {
                         </div>
                       </div>
                       <CardContent className="p-6">
-                        <h3 className="font-bold font-headline text-xl mb-2 h-14">{event.title}</h3>
+                        <h3 className="font-bold font-headline text-xl text-primary mb-2 h-14">{event.title}</h3>
                         <p className="text-muted-foreground text-sm mb-4 h-20 overflow-hidden">{event.description}</p>
                         <Button variant="link" asChild className="p-0 text-accent hover:text-accent/80">
                             <Link href="#">Learn More &rarr;</Link>
