@@ -43,7 +43,6 @@ export default function Header() {
           <Logo
             className={cn(
               isScrolled ? 'text-primary-foreground' : 'text-black',
-              !isScrolled && 'drop-shadow-md'
             )}
           />
 
@@ -55,8 +54,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  isScrolled ? 'text-primary-foreground' : 'text-black',
-                  !isScrolled && 'drop-shadow-md'
+                  isScrolled ? 'text-primary-foreground' : 'text-black'
                 )}
               >
                 {link.name}
@@ -78,7 +76,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-primary-foreground" : "text-black", "hover:bg-white/10", !isScrolled && 'drop-shadow-md')}>
+                <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-primary-foreground" : "text-black", "hover:bg-white/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
