@@ -66,16 +66,16 @@
 
 @layer utilities {
   .glow-gold {
-    box-shadow: 0 0 8px 0px theme('colors.accent / 70%');
+    box-shadow: 0 0 8px 0px hsl(var(--accent) / 0.7);
   }
   .glow-gold-lg {
-    box-shadow: 0 0 15px 2px theme('colors.accent / 60%');
+    box-shadow: 0 0 15px 2px hsl(var(--accent) / 0.6);
   }
   .section-divider {
     @apply relative py-1;
   }
   .section-divider::before {
     @apply content-[''] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent;
-    filter: drop-shadow(0 0 3px theme('colors.accent / 50%'));
+    filter: drop-shadow(0 0 3px hsl(var(--accent) / 0.5));
   }
 }
