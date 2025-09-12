@@ -9,6 +9,8 @@ import CallToGive from '@/components/sections/call-to-give';
 import Testimonies from '@/components/sections/testimonies';
 import NewsletterSignup from '@/components/sections/newsletter-signup';
 import Footer from '@/components/layout/footer';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -23,6 +25,11 @@ export default function Home() {
         <CallToGive />
         <Testimonies />
         <NewsletterSignup />
+        <div className="bg-secondary text-center py-8">
+          <Button asChild>
+            <Link href="/admin">Go to Admin Page (Temporary)</Link>
+          </Button>
+        </div>
       </main>
       <Footer />
     </div>
