@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -20,28 +19,12 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled
-          ? 'bg-primary shadow-md'
-          : 'bg-transparent'
+        'sticky top-0 z-50 w-full transition-all duration-300 bg-primary/80 backdrop-blur-sm shadow-md'
       )}
       id="home"
     >
@@ -49,7 +32,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <Logo
             className={cn(
-              isScrolled ? 'text-primary-foreground' : 'text-white'
+              'text-primary-foreground'
             )}
           />
 
@@ -61,7 +44,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  isScrolled ? 'text-primary-foreground' : 'text-white'
+                  'text-primary-foreground'
                 )}
               >
                 {link.name}
@@ -83,7 +66,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-primary-foreground hover:bg-white/10" : "text-white hover:bg-white/10")}>
+                <Button variant="ghost" size="icon" className={cn("text-primary-foreground hover:bg-white/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
