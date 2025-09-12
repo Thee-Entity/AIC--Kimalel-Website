@@ -68,7 +68,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/60 to-transparent"></div>
       
       <div className="relative z-10 px-4 flex flex-col items-center">
-        <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-accent glow-gold-lg animate-fade-in-down">
+        <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-white animate-fade-in-down">
           AIC Kimalel Saramek Church
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 animate-fade-in-up">
