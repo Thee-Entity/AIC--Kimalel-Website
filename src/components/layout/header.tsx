@@ -42,7 +42,8 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <Logo
             className={cn(
-              'text-primary-foreground'
+              'text-primary-foreground',
+              !isScrolled && 'drop-shadow-md'
             )}
           />
 
@@ -54,7 +55,8 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  'text-primary-foreground'
+                  'text-primary-foreground',
+                  !isScrolled && 'drop-shadow-md'
                 )}
               >
                 {link.name}
@@ -76,7 +78,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn("text-primary-foreground hover:bg-white/10")}>
+                <Button variant="ghost" size="icon" className={cn("text-primary-foreground hover:bg-white/10", !isScrolled && 'drop-shadow-md')}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
