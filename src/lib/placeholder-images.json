@@ -3,21 +3,21 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A beautiful modern church exterior.",
-      "imageUrl": "https://picsum.photos/seed/church1/1920/1080",
-      "imageHint": "church exterior"
+      "description": "A beautiful modern church sanctuary, empty and peaceful.",
+      "imageUrl": "https://picsum.photos/seed/church-sanctuary/1920/1080",
+      "imageHint": "church sanctuary"
     },
     {
       "id": "hero-slide-1",
       "description": "Sunlight streaming through stained glass windows in a church.",
-      "imageUrl": "https://picsum.photos/seed/church2/1920/1080",
-      "imageHint": "stained glass"
+      "imageUrl": "https://picsum.photos/seed/church-window/1920/1080",
+      "imageHint": "church window"
     },
     {
       "id": "hero-slide-2",
-      "description": "An empty church sanctuary with rows of pews.",
-      "imageUrl": "https://picsum.photos/seed/church3/1920/1080",
-      "imageHint": "church sanctuary"
+      "description": "An empty church with rows of pews.",
+      "imageUrl": "https://picsum.photos/seed/church-pews/1920/1080",
+      "imageHint": "church pews"
     },
     {
       "id": "sermon-thumbnail",
