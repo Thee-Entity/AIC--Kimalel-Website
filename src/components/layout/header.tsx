@@ -20,11 +20,21 @@ const navLinks = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300 bg-primary/80 backdrop-blur-sm shadow-md'
+        'sticky top-0 z-50 w-full transition-all duration-300',
+        isScrolled ? 'bg-primary/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
       )}
       id="home"
     >
