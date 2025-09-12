@@ -41,19 +41,19 @@ const infoItems = [
 
 export default function QuickInfo() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-white dark:bg-card">
+    <section id="services" className="py-16 md:py-24 bg-primary dark:bg-primary">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {infoItems.map((item) => (
-            <Card key={item.title} className="group text-center border-2 border-transparent hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <Card key={item.title} className="group text-center border-2 bg-secondary border-transparent hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="items-center">
                 <div className="p-4 bg-primary text-primary-foreground rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
-                  <item.icon className="h-8 w-8" />
+                  <item.icon className="h-8 w-8 text-accent group-hover:text-primary" />
                 </div>
-                <CardTitle className="font-headline text-2xl pt-4 text-primary">{item.title}</CardTitle>
+                <CardTitle className="font-headline text-2xl pt-4 text-primary-foreground">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-gray-600 dark:text-gray-400 mb-6 min-h-[6rem]">
+                <div className="text-gray-300 dark:text-gray-400 mb-6 min-h-[6rem]">
                     {item.lines.map((line, index) => (
                         <p key={index} className="text-sm">
                             <strong>{line.label}</strong> {line.value}
