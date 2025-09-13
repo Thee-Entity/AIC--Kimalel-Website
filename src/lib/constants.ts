@@ -112,7 +112,7 @@ export const testimonies = [
     },
     {
       name: "Brian Choge",
-      quote: "Serving as the Youth Chairperson at AIC Kimalel was a profound experience. The church provided a nurturing environment for leadership and spiritual growth, shaping me in countless ways.",
+      quote: "Serving as a Youth Leader at AIC Kimalel was a profound experience that shaped me in countless ways before I relocated to Australia. The church provided a nurturing environment for leadership and spiritual growth.",
       imageId: "testimony-2",
     },
     {
