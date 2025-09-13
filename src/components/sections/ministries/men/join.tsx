@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useActionState } from 'react';
@@ -49,17 +48,17 @@ export default function MensFellowshipJoin() {
                 className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
             />
             <Input
-                type="email"
-                name="email"
-                placeholder="Email Address"
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
                 required
                 className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
             />
           </div>
           <Input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
+                type="email"
+                name="email"
+                placeholder="Email Address"
                 required
                 className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
             />
