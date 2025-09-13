@@ -1,9 +1,10 @@
+
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { leadership } from "@/lib/constants";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const menLeadership = leadership.filter(l => l.name.includes("Elius") || l.name.includes("Jophet"));
+const menLeadership = leadership.filter(l => l.name.includes("Elias") || l.name.includes("Jophet") || l.name.includes("Bureti"));
 
 export default function MensFellowshipLeadership() {
   return (
@@ -16,7 +17,7 @@ export default function MensFellowshipLeadership() {
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent/50 rounded-full glow-gold"></span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {menLeadership.map((leader) => {
             const leaderImage = PlaceHolderImages.find(p => p.id === leader.imageId);
             return (
