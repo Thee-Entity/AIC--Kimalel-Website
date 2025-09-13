@@ -3,11 +3,11 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const galleryImages = [
     'ministry-women',
+    'women-gallery-1',
+    'women-gallery-2',
     'ministry-outreach',
     'ministry-women-highlight',
-    'event-1',
     'event-2',
-    'event-3',
 ]
 
 export default function WomensFellowshipGallery() {

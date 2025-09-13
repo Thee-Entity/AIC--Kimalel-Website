@@ -186,6 +186,18 @@
         "description": "Inspiring photo of the church building / congregation.",
         "imageUrl": "https://picsum.photos/seed/supporthero/1920/1080",
         "imageHint": "church building"
+    },
+    {
+      "id": "women-gallery-1",
+      "description": "Women of the church posing for a photo.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/women1.JPG",
+      "imageHint": "women fellowship"
+    },
+    {
+      "id": "women-gallery-2",
+      "description": "Women of the church during a service.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/women2.JPG",
+      "imageHint": "women service"
     }
   ]
 }
