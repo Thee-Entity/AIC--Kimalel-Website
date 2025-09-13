@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useActionState } from 'react';
@@ -11,7 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} size="lg">
+    <Button type="submit" disabled={pending} size="lg" className="w-full">
       {pending ? 'Submitting...' : 'Submit'}
     </Button>
   );
@@ -38,7 +39,7 @@ export default function WomensFellowshipJoin() {
         <h2 className="text-3xl font-bold font-headline text-white mb-4">
             Join a sisterhood of faith and service.
         </h2>
-        <form action={formAction} className="max-w-xl mx-auto mt-8 space-y-4">
+        <form action={formAction} className="max-w-2xl mx-auto mt-8 space-y-4">
           <input type="hidden" name="ministry" value="Women's Fellowship" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
@@ -55,6 +56,13 @@ export default function WomensFellowshipJoin() {
                 className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
             />
           </div>
+           <Input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+                className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
+            />
           <SubmitButton />
         </form>
       </div>
