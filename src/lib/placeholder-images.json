@@ -141,7 +141,7 @@
     },
     {
         "id": "leader-1",
-        "description": "Profile picture of Reverend Elius Ng'etich.",
+        "description": "Profile picture of Rev. Dr. Elias Ng'etich.",
         "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Elias-Ngetich.webp",
         "imageHint": "male leader"
     },
@@ -160,7 +160,7 @@
     {
         "id": "leader-4",
         "description": "Profile picture of Evangelist Bureti Philemon.",
-        "imageUrl": "https://picsum.photos/seed/leader4/200/200",
+        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/bureti.png",
         "imageHint": "male evangelist"
     },
     {
