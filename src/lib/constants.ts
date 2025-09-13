@@ -120,11 +120,6 @@ export const testimonies = [
       quote: "The youth ministry has been amazing for my kids. They love coming to church and are building a strong foundation in Christ.",
       imageId: "testimony-3",
     },
-    {
-      name: "Samuel Kimani",
-      quote: "I was welcomed with open arms from my very first visit. This is a place where you can truly belong.",
-      imageId: "testimony-1",
-    },
 ];
 
 export const leadership = [
