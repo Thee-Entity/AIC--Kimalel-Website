@@ -1,11 +1,11 @@
 
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
-import { cookies } from "next/headers";
 
 type Event = {
   id: number;
@@ -16,8 +16,7 @@ type Event = {
 };
 
 export default async function UpcomingEvents() {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   const { data: events, error } = await supabase
     .from('events')

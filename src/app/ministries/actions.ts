@@ -13,10 +13,9 @@ const ministrySignupSchema = z.object({
 });
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
-  const cookieStore = cookies();
   
   // Create a Supabase client with the service_role key to bypass RLS for inserts
-  const supabaseAdmin = createClient(cookieStore);
+  const supabaseAdmin = createClient(true);
 
   const validatedFields = ministrySignupSchema.safeParse({
     fullName: formData.get('fullName'),

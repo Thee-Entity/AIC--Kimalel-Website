@@ -1,11 +1,10 @@
-import { createServerClient } from '@supabase/ssr'
+
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function updateSession(request: NextRequest) {
-  let response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    },
+  let supabaseResponse = NextResponse.next({
+    request,
   })
 
   const supabase = createServerClient(
@@ -16,35 +15,33 @@ export async function updateSession(request: NextRequest) {
         get(name: string) {
           return request.cookies.get(name)?.value
         },
-        set(name: string, value: string, options) {
+        set(name: string, value: string, options: CookieOptions) {
+          // If the cookie is updated, update the cookies for the request and response
           request.cookies.set({
             name,
             value,
             ...options,
           })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
+          supabaseResponse = NextResponse.next({
+            request,
           })
-          response.cookies.set({
+          supabaseResponse.cookies.set({
             name,
             value,
             ...options,
           })
         },
-        remove(name: string, options) {
+        remove(name: string, options: CookieOptions) {
+          // If the cookie is removed, update the cookies for the request and response
           request.cookies.set({
             name,
             value: '',
             ...options,
           })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
+          supabaseResponse = NextResponse.next({
+            request,
           })
-          response.cookies.set({
+          supabaseResponse.cookies.set({
             name,
             value: '',
             ...options,
@@ -55,7 +52,8 @@ export async function updateSession(request: NextRequest) {
   )
 
   // This will refresh the session cookie if it's expired.
+  // It will NOT throw if there is no session.
   await supabase.auth.getUser()
 
-  return response
+  return supabaseResponse
 }

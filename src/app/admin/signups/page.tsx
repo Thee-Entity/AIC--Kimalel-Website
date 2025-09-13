@@ -1,4 +1,5 @@
 
+
 import { createClient } from '@/utils/supabase/server';
 import { cookies } from 'next/headers';
 import { Button } from "@/components/ui/button";
@@ -57,7 +58,7 @@ function DownloadButton({ data }: { data: Signup[] }) {
 
 export default async function SignupsAdminPage() {
   const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   const { data: signups, error } = await supabase
     .from('ministry_signups')
