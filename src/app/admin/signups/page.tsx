@@ -1,3 +1,4 @@
+
 'use client';
 
 import { createClient } from '@/utils/supabase/client';
@@ -57,9 +58,9 @@ function DownloadButton({ data }: { data: Signup[] }) {
 export default function SignupsAdminPage() {
   const [signups, setSignups] = useState<Signup[]>([]);
   const [loading, setLoading] = useState(true);
-  const supabase = createClient();
-
+  
   useEffect(() => {
+    const supabase = createClient();
     const fetchSignups = async () => {
       setLoading(true);
       const { data, error } = await supabase
@@ -76,7 +77,7 @@ export default function SignupsAdminPage() {
     };
 
     fetchSignups();
-  }, [supabase]);
+  }, []);
 
 
   return (
