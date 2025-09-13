@@ -14,12 +14,6 @@
       "imageHint": "church event"
     },
     {
-      "id": "hero-slide-2",
-      "description": "An empty church with rows of pews.",
-      "imageUrl": "https://picsum.photos/seed/church-pews/1920/1080",
-      "imageHint": "church pews"
-    },
-    {
       "id": "hero-slide-3",
       "description": "Front view of AIC Kimalel church building.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/frontview%20of%20the%20church.JPG",
