@@ -1,4 +1,5 @@
 
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,7 +16,7 @@ type Event = {
   image_url: string;
 };
 
-export default async function UpcomingEvents() {
+export default function UpcomingEvents() {
   
   if (!events || events.length === 0) {
       return (
@@ -87,3 +88,4 @@ export default async function UpcomingEvents() {
     </section>
   );
 }
+
