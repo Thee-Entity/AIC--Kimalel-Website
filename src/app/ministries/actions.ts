@@ -2,8 +2,8 @@
 'use server';
 
 import { z } from 'zod';
-// Here you would import your firebase admin config to write to firestore
-// For now, we'll just log to the console
+import { createClient } from '@/utils/supabase/server';
+import { cookies } from 'next/headers';
 
 const ministrySignupSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -13,6 +13,9 @@ const ministrySignupSchema = z.object({
 });
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+
   const validatedFields = ministrySignupSchema.safeParse({
     fullName: formData.get('fullName'),
     email: formData.get('email'),
@@ -29,12 +32,22 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
     };
   }
   
-  // Here you would integrate with your Firebase Firestore
-  console.log(`New signup for ${validatedFields.data.ministry}:`);
-  console.log(`Name: ${validatedFields.data.fullName}`);
-  console.log(`Email: ${validatedFields.data.email}`);
-  console.log(`Phone: ${validatedFields.data.phone}`);
+  const { error } = await supabase.from('ministry_signups').insert([
+    { 
+      full_name: validatedFields.data.fullName,
+      email: validatedFields.data.email,
+      phone: validatedFields.data.phone,
+      ministry: validatedFields.data.ministry,
+    },
+  ]);
 
-  // For demonstration, we'll just return a success message.
+  if (error) {
+    console.error('Error inserting ministry signup:', error);
+    return {
+      message: 'There was an error submitting your request. Please try again.',
+      success: false,
+    };
+  }
+
   return { message: `Thank you for your interest, ${validatedFields.data.fullName}! We will be in touch shortly.`, success: true };
 }

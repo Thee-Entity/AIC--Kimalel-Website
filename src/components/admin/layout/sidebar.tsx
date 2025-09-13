@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, Settings } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, Settings, UserPlus } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 
@@ -16,6 +16,7 @@ const navItems = [
   { href: '/admin/stories', label: 'Stories', icon: Newspaper },
   { href: '/admin/subscriptions', label: 'Subscriptions', icon: Mail },
   { href: '/admin/requests', label: 'Prayer Requests', icon: Mail },
+  { href: '/admin/signups', label: 'Signups', icon: UserPlus },
 ];
 
 export default function AdminSidebar() {
