@@ -9,15 +9,15 @@
     },
     {
       "id": "hero-slide-1",
-      "description": "A ministry gathering at the church.",
-      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/ministry.JPG",
-      "imageHint": "church ministry"
-    },
-    {
-      "id": "hero-slide-3",
       "description": "Front view of AIC Kimalel church building.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/frontview%20of%20the%20church.JPG",
       "imageHint": "church building"
+    },
+    {
+      "id": "hero-slide-3",
+      "description": "Reverend preaching at the pulpit.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/rev%20preaching%20.JPG",
+      "imageHint": "pastor preaching"
     },
     {
       "id": "hero-slide-4",
