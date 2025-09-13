@@ -129,23 +129,29 @@ export const testimonies = [
 
 export const leadership = [
     {
-        name: "Reverend Elius Ng'etich",
+        name: "Rev. Dr. Elias Ng'etich",
         role: "Leader",
-        bio: "Reverend Elius Ng'etich serves as the senior leader of AIC Kimalel Saramek Church, guiding the congregation in faith and spiritual growth.",
+        bio: "Rev. Dr. Elias Ng'etich serves as the senior leader of AIC Kimalel Saramek Church, guiding the congregation in faith and spiritual growth.",
         imageId: "leader-1",
     },
     {
-        name: "Pastor Moureen Kosgei",
+        name: "Pst. Maureen Kosgei",
         role: "Pastor",
-        bio: "Passionate about discipleship and community, Pastor Moureen leads ministries with a focus on nurturing faith and empowering families.",
+        bio: "Passionate about discipleship and community, Pastor Maureen leads ministries with a focus on nurturing faith and empowering families.",
         imageId: "leader-2",
     },
     {
-        name: "Pastor Jophet Lagat",
+        name: "Pst. Jophet Lagat",
         role: "Pastor",
         bio: "Pastor Jophet Lagat is dedicated to teaching God’s Word and supporting the church family in living Christ-centered lives.",
         imageId: "leader-3",
     },
+    {
+        name: "Ev. Bureti Philemon",
+        role: "Evangelist",
+        bio: "Evangelist Bureti is committed to spreading the Gospel and leading our outreach efforts in the community.",
+        imageId: "leader-4",
+    }
 ];
 
 export const coreValues = [

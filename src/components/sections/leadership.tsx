@@ -14,7 +14,7 @@ export default function Leadership() {
             <span className="absolute -bottom-2 left-0 w-full h-1 bg-accent/50 rounded-full glow-gold"></span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {leadership.map((leader) => {
             const leaderImage = PlaceHolderImages.find(p => p.id === leader.imageId);
             return (
