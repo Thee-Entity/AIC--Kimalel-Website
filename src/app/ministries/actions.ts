@@ -2,7 +2,7 @@
 'use server';
 
 import { z } from 'zod';
-import { createClient } from '@/utils/supabase/server';
+import { createClient as createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
 const ministrySignupSchema = z.object({
@@ -14,8 +14,24 @@ const ministrySignupSchema = z.object({
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
   const cookieStore = cookies();
-  // Use the admin client to bypass RLS for inserts
-  const supabase = createClient(cookieStore, true);
+  // Create a separate admin client to bypass RLS for inserts
+  const supabaseAdmin = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+        set(name: string, value: string, options) {
+          // This client is used for a one-off insert, so we don't need to set cookies
+        },
+        remove(name: string, options) {
+          // This client is used for a one-off insert, so we don't need to remove cookies
+        },
+      },
+    }
+  );
 
   const validatedFields = ministrySignupSchema.safeParse({
     fullName: formData.get('fullName'),
@@ -33,7 +49,7 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
     };
   }
   
-  const { error } = await supabase.from('ministry_signups').insert([
+  const { error } = await supabaseAdmin.from('ministry_signups').insert([
     { 
       full_name: validatedFields.data.fullName,
       email: validatedFields.data.email,
