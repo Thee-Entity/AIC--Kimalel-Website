@@ -106,7 +106,7 @@ export const ministries: Ministry[] = [
 
 export const testimonies = [
     {
-      name: "Jane Smith",
+      name: "Lilian Rop",
       quote: "This church has been my rock. The community here is a true family, and I've grown so much in my faith.",
       imageId: "testimony-1",
     },
@@ -116,7 +116,7 @@ export const testimonies = [
       imageId: "testimony-2",
     },
     {
-      name: "Emily Wang",
+      name: "Tabitha Jepchumba",
       quote: "The youth ministry has been amazing for my kids. They love coming to church and are building a strong foundation in Christ.",
       imageId: "testimony-3",
     },

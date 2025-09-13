@@ -105,8 +105,8 @@
     },
     {
       "id": "testimony-1",
-      "description": "A smiling person looking content.",
-      "imageUrl": "https://picsum.photos/seed/test1/200/200",
+      "description": "Profile picture of Lilian Rop.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Lilian.jpg",
       "imageHint": "person smiling"
     },
     {
@@ -117,8 +117,8 @@
     },
     {
       "id": "testimony-3",
-      "description": "A happy person outdoors.",
-      "imageUrl": "https://picsum.photos/seed/test3/200/200",
+      "description": "Profile picture of Tabitha Jepchumba.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/tabby.png",
       "imageHint": "person happy"
     },
     {
