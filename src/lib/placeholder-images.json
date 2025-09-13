@@ -141,8 +141,8 @@
     },
     {
         "id": "leader-1",
-        "description": "Profile picture of Reverend Ngetich Elius.",
-        "imageUrl": "https://picsum.photos/seed/leader1/200/200",
+        "description": "Profile picture of Reverend Elius Ng'etich.",
+        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/reve.JPG",
         "imageHint": "male leader"
     },
     {
