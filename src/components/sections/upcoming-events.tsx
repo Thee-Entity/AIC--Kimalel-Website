@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,7 +26,26 @@ export default async function UpcomingEvents() {
 
   if (error) {
     console.error('Error fetching events:', error);
-    return <p>Could not load events.</p>;
+    // You can return a more user-friendly error message here
+    return (
+        <section id="events" className="py-16 md:py-24 bg-background">
+            <div className="container mx-auto px-4 text-center">
+                 <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Kimalel</h2>
+                <p className="text-muted-foreground">Could not load upcoming events at this time. Please check back later.</p>
+            </div>
+        </section>
+    );
+  }
+  
+  if (!events || events.length === 0) {
+      return (
+        <section id="events" className="py-16 md:py-24 bg-background">
+            <div className="container mx-auto px-4 text-center">
+                 <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Kimalel</h2>
+                <p className="text-muted-foreground">No upcoming events scheduled at the moment. Please check back soon!</p>
+            </div>
+        </section>
+    );
   }
 
   return (
@@ -45,7 +65,7 @@ export default async function UpcomingEvents() {
           className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
-            {(events || []).map((event) => {
+            {events.map((event) => {
               const eventDate = new Date(event.date);
               return (
                 <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3">
