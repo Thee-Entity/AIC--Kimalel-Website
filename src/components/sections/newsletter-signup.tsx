@@ -49,7 +49,7 @@ export default function NewsletterSignup() {
               name="email"
               placeholder="Enter your email address"
               required
-              className="w-full h-14 pl-6 pr-36 rounded-full text-base bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus-visible:ring-accent focus-visible:ring-offset-0 transition-shadow focus:shadow-[0_0_15px_2px_theme(colors.accent/40%)]"
+              className="w-full h-14 pl-6 pr-36 rounded-full text-base bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus-visible:ring-accent focus-visible:ring-offset-0 transition-shadow focus:shadow-[0_0_15px_2px_hsl(var(--accent)/0.4)]"
             />
             <SubmitButton />
           </form>
