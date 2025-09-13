@@ -26,30 +26,32 @@ export default function Ministries() {
           {previewMinistries.map((ministry) => {
             const ministryImage = PlaceHolderImages.find(p => p.id === ministry.imageId);
             return (
-              <Card key={ministry.name} className="group overflow-hidden relative text-white text-center flex items-end justify-center h-80 transition-all duration-300 ease-in-out hover:shadow-2xl">
-                {ministryImage && (
-                  <Image
-                    src={ministryImage.imageUrl}
-                    alt={ministry.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    data-ai-hint={ministryImage.imageHint}
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                
-                <div className="relative p-4 flex flex-col items-center justify-end h-full w-full">
-                    <div className="transition-transform duration-500 group-hover:-translate-y-8">
-                        <ministry.icon className="w-10 h-10 mb-2 text-accent" />
-                        <h3 className="text-xl font-bold font-headline">{ministry.name}</h3>
-                    </div>
-                    <div className="absolute bottom-4 px-4 w-full">
-                        <p className="text-sm h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 ease-in-out delay-100">
-                        {ministry.description}
-                        </p>
-                    </div>
-                </div>
-              </Card>
+              <Link key={ministry.name} href={ministry.href}>
+                <Card className="group overflow-hidden relative text-white text-center flex items-end justify-center h-80 transition-all duration-300 ease-in-out hover:shadow-2xl">
+                  {ministryImage && (
+                    <Image
+                      src={ministryImage.imageUrl}
+                      alt={ministry.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      data-ai-hint={ministryImage.imageHint}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  
+                  <div className="relative p-4 flex flex-col items-center justify-end h-full w-full">
+                      <div className="transition-transform duration-500 group-hover:-translate-y-8">
+                          <ministry.icon className="w-10 h-10 mb-2 text-accent" />
+                          <h3 className="text-xl font-bold font-headline">{ministry.name}</h3>
+                      </div>
+                      <div className="absolute bottom-4 px-4 w-full">
+                          <p className="text-sm h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 ease-in-out delay-100">
+                          {ministry.description}
+                          </p>
+                      </div>
+                  </div>
+                </Card>
+              </Link>
             );
           })}
         </div>
