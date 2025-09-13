@@ -20,6 +20,18 @@
       "imageHint": "church pews"
     },
     {
+      "id": "hero-slide-3",
+      "description": "Front view of AIC Kimalel church building.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/frontview%20of%20the%20church.JPG",
+      "imageHint": "church building"
+    },
+    {
+      "id": "hero-slide-4",
+      "description": "Side view of AIC Kimalel church building.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/unnamed%20(2).jpg",
+      "imageHint": "church side"
+    },
+    {
       "id": "sermon-thumbnail",
       "description": "A pastor passionately preaching from a pulpit.",
       "imageUrl": "https://picsum.photos/seed/sermon1/600/400",

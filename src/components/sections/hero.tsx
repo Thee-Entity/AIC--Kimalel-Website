@@ -16,6 +16,8 @@ import { TheeEntityLogo } from '../thee-entity-logo';
 const heroSlides = [
   PlaceHolderImages.find(p => p.id === 'hero-background'),
   PlaceHolderImages.find(p => p.id === 'hero-slide-1'),
+  PlaceHolderImages.find(p => p.id === 'hero-slide-3'),
+  PlaceHolderImages.find(p => p.id === 'hero-slide-4'),
   PlaceHolderImages.find(p => p.id === 'hero-slide-2'),
 ].filter(Boolean) as (typeof PlaceHolderImages)[0][];
 
