@@ -50,6 +50,12 @@
       "imageHint": "bible study"
     },
     {
+        "id": "event-cell-group",
+        "description": "A small group of diverse people meeting in a home.",
+        "imageUrl": "https://picsum.photos/seed/cellgroup/500/300",
+        "imageHint": "small group"
+    },
+    {
       "id": "ministry-men",
       "description": "A group of men in a supportive fellowship meeting.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/DSC_1035.JPG",
