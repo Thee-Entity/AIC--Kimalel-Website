@@ -1,8 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { createClient as createSupabaseClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
 
 const ministrySignupSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -12,27 +10,6 @@ const ministrySignupSchema = z.object({
 });
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
-  const cookieStore = cookies();
-
-  // Create a Supabase client with the service role key for admin operations
-  const supabaseAdmin = createSupabaseClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value;
-        },
-        set(name: string, value: string, options: any) {
-          cookieStore.set({ name, value, ...options });
-        },
-        remove(name: string, options: any) {
-          cookieStore.set({ name, value: '', ...options });
-        },
-      },
-    }
-  );
-
   const validatedFields = ministrySignupSchema.safeParse({
     fullName: formData.get('fullName'),
     email: formData.get('email'),
@@ -49,22 +26,12 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
     };
   }
   
-  const { error } = await supabaseAdmin.from('ministry_signups').insert([
-    { 
-      full_name: validatedFields.data.fullName,
-      email: validatedFields.data.email,
-      phone: validatedFields.data.phone,
-      ministry: validatedFields.data.ministry,
-    },
-  ]);
+  // Supabase logic removed for stability.
+  console.log(`Ministry Signup submitted for ${validatedFields.data.ministry}:`);
+  console.log(`- Name: ${validatedFields.data.fullName}`);
+  console.log(`- Email: ${validatedFields.data.email}`);
+  console.log(`- Phone: ${validatedFields.data.phone}`);
 
-  if (error) {
-    console.error('Error inserting ministry signup:', error);
-    return {
-      message: 'There was an error submitting your request. Please try again.',
-      success: false,
-    };
-  }
 
   return { message: `Thank you for your interest, ${validatedFields.data.fullName}! We will be in touch shortly.`, success: true };
 }
