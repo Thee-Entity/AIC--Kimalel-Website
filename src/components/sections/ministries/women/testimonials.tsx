@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { testimonies } from "@/lib/constants";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const womenTestimonies = testimonies.filter(t => t.name.includes("Jane") || t.name.includes("Emily"));
+const womenTestimonies = testimonies.filter(t => t.name.includes("Lilian Rop") || t.name.includes("Tabitha Jepchumba"));
 
 export default function WomensFellowshipTestimonials() {
   return (
