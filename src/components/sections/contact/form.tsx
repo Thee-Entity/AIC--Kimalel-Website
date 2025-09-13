@@ -33,10 +33,10 @@ export default function ContactForm() {
   }, [state, toast]);
   
   return (
-    <section className="py-20">
+    <section className="py-20 bg-secondary">
       <div className="section-divider mb-20"></div>
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold font-headline text-white mb-4">
+        <h2 className="text-3xl font-bold font-headline text-primary mb-4">
             Send Us a Message
         </h2>
         <form action={formAction} className="max-w-2xl mx-auto mt-8 space-y-4">
@@ -45,28 +45,28 @@ export default function ContactForm() {
                 name="fullName"
                 placeholder="Full Name"
                 required
-                className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
+                className="bg-card border-border text-foreground focus:ring-accent"
             />
             <Input
                 type="email"
                 name="email"
                 placeholder="Email Address"
                 required
-                className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
+                className="bg-card border-border text-foreground focus:ring-accent"
             />
           </div>
           <Input
                 name="subject"
                 placeholder="Subject"
                 required
-                className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
+                className="bg-card border-border text-foreground focus:ring-accent"
             />
           <Textarea
             name="message"
             placeholder="Your Message"
             required
             rows={5}
-            className="bg-gray-800 border-gray-700 text-white focus:ring-accent"
+            className="bg-card border-border text-foreground focus:ring-accent"
           />
           <SubmitButton />
         </form>

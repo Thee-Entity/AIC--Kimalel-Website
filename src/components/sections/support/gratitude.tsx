@@ -8,7 +8,7 @@ export default function Gratitude() {
     const leaderImage = PlaceHolderImages.find(p => p.id === leader?.imageId);
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-secondary">
         <div className="section-divider mb-20"></div>
         <div className="container mx-auto px-4 text-center">
             {leader && leaderImage && (
@@ -18,7 +18,7 @@ export default function Gratitude() {
                 </Avatar>
             )}
            
-            <blockquote className="max-w-2xl mx-auto text-xl italic text-gray-300 mb-4">
+            <blockquote className="max-w-2xl mx-auto text-xl italic text-muted-foreground mb-4">
                 “Every contribution, no matter how small, is a seed sown into God’s kingdom. Thank you for partnering with us.”
             </blockquote>
             <cite className="block not-italic text-base text-accent mt-2">

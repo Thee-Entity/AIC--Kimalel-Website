@@ -10,7 +10,7 @@ const contactDetails = [
 
 export default function ContactInfo() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {contactDetails.map(detail => (
@@ -18,9 +18,9 @@ export default function ContactInfo() {
                     <div className="p-4 bg-accent/10 rounded-full mb-4">
                         <detail.icon className="h-10 w-10 text-accent" />
                     </div>
-                    <h3 className="text-xl font-bold text-accent mb-2">{detail.title}</h3>
+                    <h3 className="text-xl font-bold text-primary mb-2">{detail.title}</h3>
                     {detail.lines.map(line => (
-                        <p key={line} className="text-gray-300">{line}</p>
+                        <p key={line} className="text-muted-foreground">{line}</p>
                     ))}
                 </div>
             ))}
