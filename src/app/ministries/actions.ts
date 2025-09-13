@@ -1,7 +1,8 @@
 'use server';
 
 import { z } from 'zod';
-import { createClient } from '@/utils/supabase/server';
+import { createClient as createSupabaseClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
 
 const ministrySignupSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -11,8 +12,26 @@ const ministrySignupSchema = z.object({
 });
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
-  
-  const supabaseAdmin = createClient(true);
+  const cookieStore = cookies();
+
+  // Create a Supabase client with the service role key for admin operations
+  const supabaseAdmin = createSupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value;
+        },
+        set(name: string, value: string, options: any) {
+          cookieStore.set({ name, value, ...options });
+        },
+        remove(name: string, options: any) {
+          cookieStore.set({ name, value: '', ...options });
+        },
+      },
+    }
+  );
 
   const validatedFields = ministrySignupSchema.safeParse({
     fullName: formData.get('fullName'),
