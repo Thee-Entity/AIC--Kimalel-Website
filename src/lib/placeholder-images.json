@@ -4,14 +4,14 @@
     {
       "id": "hero-background",
       "description": "A beautiful modern church sanctuary, empty and peaceful.",
-      "imageUrl": "https://picsum.photos/seed/church-sanctuary/1920/1080",
-      "imageHint": "church sanctuary"
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/DSC_0876.JPG",
+      "imageHint": "church service"
     },
     {
       "id": "hero-slide-1",
       "description": "Sunlight streaming through stained glass windows in a church.",
-      "imageUrl": "https://picsum.photos/seed/church-window/1920/1080",
-      "imageHint": "church window"
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/DSC_0889.JPG",
+      "imageHint": "church event"
     },
     {
       "id": "hero-slide-2",
