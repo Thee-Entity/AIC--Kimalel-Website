@@ -2,12 +2,15 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const galleryImages = [
+    'men-gallery-1',
+    'men-gallery-2',
+    'men-gallery-3',
+    'men-gallery-4',
+    'men-gallery-5',
+    'men-gallery-6',
     'ministry-men',
     'ministry-outreach',
     'ministry-highlight',
-    'event-1',
-    'event-2',
-    'event-3',
 ]
 
 export default function MensFellowshipGallery() {

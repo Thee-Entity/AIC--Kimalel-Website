@@ -106,7 +106,7 @@
     {
       "id": "testimony-1",
       "description": "Profile picture of a man.",
-      "imageUrl": "https://picsum.photos/seed/testimony4/200/200",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Lilian.jpg",
       "imageHint": "person happy"
     },
     {
@@ -119,6 +119,12 @@
       "id": "testimony-3",
       "description": "Profile picture of Tabitha Jepchumba.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/tabby.png",
+      "imageHint": "person happy"
+    },
+    {
+      "id": "testimony-4",
+      "description": "Profile picture of a man.",
+      "imageUrl": "https://picsum.photos/seed/testimony5/200/200",
       "imageHint": "person happy"
     },
     {
@@ -198,6 +204,42 @@
       "description": "Women of the church during a service.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/women2.JPG",
       "imageHint": "women service"
+    },
+    {
+      "id": "men-gallery-1",
+      "description": "Men's fellowship group photo.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men1.JPG",
+      "imageHint": "men group"
+    },
+    {
+      "id": "men-gallery-2",
+      "description": "Men's fellowship group during an event.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men2.JPG",
+      "imageHint": "men fellowship"
+    },
+    {
+      "id": "men-gallery-3",
+      "description": "Men of the church posing for a photo.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men3.JPG",
+      "imageHint": "men photo"
+    },
+    {
+      "id": "men-gallery-4",
+      "description": "Church men during a meeting.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men4.JPG",
+      "imageHint": "men meeting"
+    },
+    {
+      "id": "men-gallery-5",
+      "description": "A group of men from the fellowship.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men5.JPG",
+      "imageHint": "men group"
+    },
+    {
+      "id": "men-gallery-6",
+      "description": "Men's fellowship members at an outdoor event.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men6.JPG",
+      "imageHint": "men outdoor"
     }
   ]
 }
