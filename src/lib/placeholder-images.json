@@ -142,7 +142,7 @@
     {
         "id": "ministries-hero",
         "description": "A diverse group of people in fellowship.",
-        "imageUrl": "https://picsum.photos/seed/ministrieshero/1920/1080",
+        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/ministry.JPG",
         "imageHint": "church fellowship"
     },
     {
