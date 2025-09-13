@@ -1,7 +1,6 @@
+'use client';
 
-
-import { createClient } from '@/utils/supabase/server';
-import { cookies } from 'next/headers';
+import { createClient } from '@/utils/supabase/client';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -9,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Download, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { format } from 'date-fns';
+import { useEffect, useState } from 'react';
 
 type Signup = {
   id: number;
@@ -45,9 +45,7 @@ function downloadCSV(data: Signup[]) {
   document.body.removeChild(link);
 }
 
-// Client component to handle CSV download
 function DownloadButton({ data }: { data: Signup[] }) {
-    'use client';
     return (
         <Button onClick={() => downloadCSV(data)} className="bg-gray-200 hover:bg-gray-300 text-gray-700 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 rounded-full shadow-lg hover:shadow-xl transition-shadow">
             <Download className="mr-2 h-5 w-5" />
@@ -56,20 +54,30 @@ function DownloadButton({ data }: { data: Signup[] }) {
     )
 }
 
-export default async function SignupsAdminPage() {
-  const cookieStore = cookies();
+export default function SignupsAdminPage() {
+  const [signups, setSignups] = useState<Signup[]>([]);
+  const [loading, setLoading] = useState(true);
   const supabase = createClient();
 
-  const { data: signups, error } = await supabase
-    .from('ministry_signups')
-    .select('*')
-    .order('created_at', { ascending: false });
+  useEffect(() => {
+    const fetchSignups = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('ministry_signups')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-  if (error) {
-    console.error('Error fetching signups:', error);
-  }
+      if (error) {
+        console.error('Error fetching signups:', error);
+      } else {
+        setSignups(data as Signup[]);
+      }
+      setLoading(false);
+    };
 
-  const typedSignups = signups as Signup[] || [];
+    fetchSignups();
+  }, [supabase]);
+
 
   return (
     <div>
@@ -78,7 +86,7 @@ export default async function SignupsAdminPage() {
             <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Ministry Signups</h1>
             <p className="text-gray-600 dark:text-gray-400">View and manage all ministry signups.</p>
         </div>
-        <DownloadButton data={typedSignups} />
+        <DownloadButton data={signups} />
       </div>
 
       <Card className="bg-white dark:bg-gray-800">
@@ -106,18 +114,25 @@ export default async function SignupsAdminPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {typedSignups.map((signup) => (
-                <TableRow key={signup.id}>
-                  <TableCell className="font-medium">{signup.full_name}</TableCell>
-                  <TableCell>{signup.email}</TableCell>
-                  <TableCell>{signup.phone}</TableCell>
-                  <TableCell>
-                    <Badge variant="secondary">{signup.ministry}</Badge>
-                  </TableCell>
-                  <TableCell>{format(new Date(signup.created_at), 'PPP')}</TableCell>
+              {loading ? (
+                 <TableRow>
+                    <TableCell colSpan={5} className="text-center text-muted-foreground py-8">
+                        Loading signups...
+                    </TableCell>
                 </TableRow>
-              ))}
-              {typedSignups.length === 0 && (
+              ) : signups.length > 0 ? (
+                signups.map((signup) => (
+                  <TableRow key={signup.id}>
+                    <TableCell className="font-medium">{signup.full_name}</TableCell>
+                    <TableCell>{signup.email}</TableCell>
+                    <TableCell>{signup.phone}</TableCell>
+                    <TableCell>
+                      <Badge variant="secondary">{signup.ministry}</Badge>
+                    </TableCell>
+                    <TableCell>{format(new Date(signup.created_at), 'PPP')}</TableCell>
+                  </TableRow>
+                ))
+              ) : (
                 <TableRow>
                     <TableCell colSpan={5} className="text-center text-muted-foreground py-8">
                         No signups yet.

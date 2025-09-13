@@ -1,9 +1,7 @@
-
 'use server';
 
 import { z } from 'zod';
 import { createClient } from '@/utils/supabase/server';
-import { cookies } from 'next/headers';
 
 const ministrySignupSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -14,7 +12,6 @@ const ministrySignupSchema = z.object({
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
   
-  // Create a Supabase client with the service_role key to bypass RLS for inserts
   const supabaseAdmin = createClient(true);
 
   const validatedFields = ministrySignupSchema.safeParse({

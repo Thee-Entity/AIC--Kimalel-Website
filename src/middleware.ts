@@ -2,7 +2,6 @@ import { type NextRequest } from 'next/server'
 import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
-  // This will refresh the user's session cookie and make it available to Server Components
   return await updateSession(request)
 }
 

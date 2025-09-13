@@ -25,7 +25,6 @@ export default async function UpcomingEvents() {
 
   if (error) {
     console.error('Error fetching events:', error);
-    // You can return a more user-friendly error message here
     return (
         <section id="events" className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 text-center">
