@@ -111,9 +111,9 @@
     },
     {
       "id": "testimony-2",
-      "description": "A person looking thoughtful and content.",
-      "imageUrl": "https://picsum.photos/seed/test2/200/200",
-      "imageHint": "person content"
+      "description": "Profile picture of Brian Choge.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choge.jpg",
+      "imageHint": "male leader"
     },
     {
       "id": "testimony-3",

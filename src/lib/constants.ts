@@ -111,8 +111,8 @@ export const testimonies = [
       imageId: "testimony-1",
     },
     {
-      name: "David Otieno",
-      quote: "Finding AIC Kimalel was a turning point for me. The teachings are so relevant, and I feel God's presence every Sunday.",
+      name: "Brian Choge",
+      quote: "Serving as the Youth Chairperson at AIC Kimalel was a profound experience. The church provided a nurturing environment for leadership and spiritual growth, shaping me in countless ways.",
       imageId: "testimony-2",
     },
     {
