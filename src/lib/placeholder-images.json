@@ -3,15 +3,15 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A beautiful modern church sanctuary, empty and peaceful.",
-      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/DSC_0876.JPG",
-      "imageHint": "church service"
+      "description": "AIC Kimalel Saramek Church sign.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/church%20sign.JPG",
+      "imageHint": "church sign"
     },
     {
       "id": "hero-slide-1",
-      "description": "Sunlight streaming through stained glass windows in a church.",
-      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/DSC_0889.JPG",
-      "imageHint": "church event"
+      "description": "A ministry gathering at the church.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/ministry.JPG",
+      "imageHint": "church ministry"
     },
     {
       "id": "hero-slide-3",
