@@ -20,7 +20,7 @@ export default function ContactMap() {
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
-            <Button asChild size="lg" className="mt-8">
+            <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold">
                 <Link href="https://maps.app.goo.gl/t2UotCaY79vicXJj9" target="_blank">Get Directions</Link>
             </Button>
         </div>
