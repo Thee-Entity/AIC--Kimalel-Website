@@ -14,7 +14,8 @@ const ministrySignupSchema = z.object({
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
   const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  // Use the admin client to bypass RLS for inserts
+  const supabase = createClient(cookieStore, true);
 
   const validatedFields = ministrySignupSchema.safeParse({
     fullName: formData.get('fullName'),
