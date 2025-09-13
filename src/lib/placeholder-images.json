@@ -64,13 +64,13 @@
     {
         "id": "ministry-youth",
         "description": "A group of diverse young people smiling and laughing.",
-        "imageUrl": "https://picsum.photos/seed/minyouth/400/400",
+        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/youths.JPG",
         "imageHint": "young people"
     },
     {
         "id": "ministry-choir",
         "description": "A church choir singing with passion.",
-        "imageUrl": "https://picsum.photos/seed/minchoir/400/400",
+        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/worship.JPG",
         "imageHint": "choir singing"
     },
     {
@@ -94,7 +94,7 @@
     {
         "id": "ministry-children",
         "description": "Happy children playing and learning in a classroom.",
-        "imageUrl": "https://picsum.photos/seed/minchild/400/400",
+        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/sunday%20schoo;.JPG",
         "imageHint": "children playing"
     },
     {
