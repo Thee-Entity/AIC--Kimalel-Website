@@ -105,9 +105,9 @@
     },
     {
       "id": "testimony-1",
-      "description": "Profile picture of Lilian Rop.",
-      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Lilian.jpg",
-      "imageHint": "person smiling"
+      "description": "Profile picture of a man.",
+      "imageUrl": "https://picsum.photos/seed/testimony4/200/200",
+      "imageHint": "person happy"
     },
     {
       "id": "testimony-2",
