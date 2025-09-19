@@ -5,20 +5,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
-import { upcomingEvents as events } from "@/lib/constants";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { createClient } from "@/utils/supabase/server";
+import { isFuture } from "date-fns";
 
-type Event = {
-  id: number;
-  title: string;
-  description: string;
-  date: string; 
-  image_url: string;
-};
+export default async function UpcomingEvents() {
+  const supabase = createClient();
+  const { data: events, error } = await supabase
+    .from('events')
+    .select('*')
+    .order('date', { ascending: true });
 
-export default function UpcomingEvents() {
+  if (error) {
+    console.error('Error fetching events:', error);
+  }
+
+  const upcomingEvents = events?.filter(event => isFuture(new Date(event.date))) ?? [];
   
-  if (!events || events.length === 0) {
+  if (!upcomingEvents || upcomingEvents.length === 0) {
       return (
         <section id="events" className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 text-center">
@@ -46,13 +50,13 @@ export default function UpcomingEvents() {
           className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
-            {events.map((event, index) => {
+            {upcomingEvents.map((event) => {
               const eventDate = new Date(event.date);
-              const eventImage = PlaceHolderImages.find(p => p.id === event.imageId);
+              const eventImage = PlaceHolderImages.find(p => p.id === event.image_id);
               if (!eventImage) return null;
 
               return (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2">
                     <Card className="overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card">
                       <div className="relative aspect-[4/3]">
@@ -88,4 +92,3 @@ export default function UpcomingEvents() {
     </section>
   );
 }
-
