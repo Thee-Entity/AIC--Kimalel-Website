@@ -2,6 +2,7 @@
 
 import { z } from 'zod';
 import { askAiAboutSermon } from '@/ai/flows/ai-sermon-assistant';
+import { createAdminClient } from '@/utils/supabase/server';
 
 export async function handleSermonQuery(sermonTranscript: string, question: string) {
   if (!process.env.GEMINI_API_KEY) {
@@ -39,9 +40,18 @@ export async function handleNewsletterSignup(prevState: any, formData: FormData)
     };
   }
   
-  // Here you would integrate with your email service (e.g., SendGrid, Mailgun)
-  console.log(`New newsletter signup: ${validatedFields.data.email}`);
+  const supabase = createAdminClient();
+  const { error } = await supabase
+    .from('subscribers')
+    .insert([{ email: validatedFields.data.email }]);
 
-  // For demonstration, we'll just return a success message.
+  if (error) {
+    console.error('Supabase error:', error.message);
+    if (error.code === '23505') { // Unique violation
+        return { message: 'This email address is already subscribed.' };
+    }
+    return { message: 'Sorry, there was an error. Please try again.' };
+  }
+
   return { message: `Thank you for subscribing!` };
 }
