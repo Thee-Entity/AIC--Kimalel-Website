@@ -1,8 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-// Here you would import your firebase admin config to write to firestore
-// For now, we'll just log to the console
+import { createClient } from '@/utils/supabase/server';
 
 const contactFormSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -27,11 +26,23 @@ export async function handleContactForm(prevState: any, formData: FormData) {
     };
   }
   
-  // Here you would integrate with your Firebase Firestore
-  console.log(`New contact message from ${validatedFields.data.fullName}:`);
-  console.log(`Email: ${validatedFields.data.email}`);
-  console.log(`Subject: ${validatedFields.data.subject}`);
-  console.log(`Message: ${validatedFields.data.message}`);
+  const supabase = createClient();
+  const { error } = await supabase
+    .from('contacts')
+    .insert([{ 
+        full_name: validatedFields.data.fullName,
+        email: validatedFields.data.email,
+        subject: validatedFields.data.subject,
+        message: validatedFields.data.message
+    }]);
+
+  if (error) {
+    console.error('Supabase error:', error.message);
+    return { 
+        message: 'Sorry, there was an error sending your message. Please try again.',
+        success: false 
+    };
+  }
 
   return { message: `Thank you for your message, ${validatedFields.data.fullName}! We will get back to you soon.`, success: true };
 }
