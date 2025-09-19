@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Banknote, Building, Smartphone } from "lucide-react";
+import { Banknote, Building, CreditCard, Smartphone } from "lucide-react";
+import Link from "next/link";
+import { PaypalIcon } from "@/components/paypal-icon";
 
 const givingMethods = [
     {
@@ -16,7 +18,7 @@ const givingMethods = [
         icon: Smartphone,
         details: [
             { label: "Paybill Number", value: "159210" },
-            { label: "Account Number", value: "Renovations" },
+            { label: "Account Number", value: "Donation/Tithe" },
         ]
     },
     {
@@ -36,7 +38,30 @@ export default function WaysToGive() {
         <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">Ways to Give</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-card border-accent/20 border backdrop-blur-sm text-foreground transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:shadow-accent/20 col-span-1 lg:col-span-2">
+              <CardHeader className="flex-row items-center gap-4">
+                <div className="p-3 bg-accent/10 rounded-full">
+                    <CreditCard className="h-8 w-8 text-accent" />
+                </div>
+                <CardTitle className="text-accent text-2xl font-headline">Online Giving</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col md:flex-row gap-4">
+                 <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold" asChild>
+                    <Link href="#">
+                        <CreditCard className="mr-2 h-5 w-5" />
+                        Donate with Card
+                    </Link>
+                </Button>
+                <Button size="lg" className="w-full bg-[#00457C] text-white hover:bg-[#003057] rounded-full transition-shadow hover:shadow-lg" asChild>
+                    <Link href="#">
+                        <PaypalIcon className="mr-2 h-5 w-5" />
+                        Donate with PayPal
+                    </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
           {givingMethods.map((method) => (
             <Card key={method.title} className="bg-card border-accent/20 border backdrop-blur-sm text-foreground transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:shadow-accent/20">
               <CardHeader className="flex-row items-center gap-4">
@@ -54,9 +79,6 @@ export default function WaysToGive() {
                         </li>
                     ))}
                 </ul>
-                {method.title === 'Lipa na M-Pesa' && (
-                    <Button className="w-full mt-6 bg-accent text-accent-foreground hover:bg-accent/90">Give Online</Button>
-                )}
               </CardContent>
             </Card>
           ))}
