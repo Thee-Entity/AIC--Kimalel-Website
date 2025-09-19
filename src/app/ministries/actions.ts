@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { createClient } from '@/utils/supabase/server';
 
 const ministrySignupSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
@@ -26,12 +27,23 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
     };
   }
   
-  // Supabase logic removed for stability.
-  console.log(`Ministry Signup submitted for ${validatedFields.data.ministry}:`);
-  console.log(`- Name: ${validatedFields.data.fullName}`);
-  console.log(`- Email: ${validatedFields.data.email}`);
-  console.log(`- Phone: ${validatedFields.data.phone}`);
+  const supabase = createClient();
+  const { error } = await supabase
+    .from('ministry_signups')
+    .insert([{ 
+        full_name: validatedFields.data.fullName,
+        email: validatedFields.data.email,
+        phone: validatedFields.data.phone,
+        ministry: validatedFields.data.ministry
+    }]);
 
+  if (error) {
+    console.error('Supabase error:', error.message);
+    return { 
+        message: 'Sorry, there was an error processing your signup. Please try again.',
+        success: false 
+    };
+  }
 
   return { message: `Thank you for your interest, ${validatedFields.data.fullName}! We will be in touch shortly.`, success: true };
 }
