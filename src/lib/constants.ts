@@ -180,33 +180,34 @@ export const coreValues = [
 
 export const musicVideos = [
   {
-    title: "Video Title 1",
+    title: "YERUSALEMU",
     youtubeUrl: "https://www.youtube.com/watch?v=4Yxbewa4mIE&list=RD4Yxbewa4mIE&start_radio=1",
     imageId: "video-thumb-1"
   },
   {
-    title: "Video Title 2",
+    title: "MIMI NI MZABIBU",
     youtubeUrl: "https://www.youtube.com/watch?v=3I5aE24HWQE&list=RD4Yxbewa4mIE&index=2",
     imageId: "video-thumb-2"
   },
   {
-    title: "Video Title 3",
+    title: "FURAHINI",
     youtubeUrl: "https://www.youtube.com/watch?v=xFuJGtGQJTg&list=RD4Yxbewa4mIE&index=3",
     imageId: "video-thumb-3"
   },
   {
-    title: "Video Title 4",
+    title: "HEKIMA",
     youtubeUrl: "https://www.youtube.com/watch?v=Atp_GGWSDgk&list=RD4Yxbewa4mIE&index=4",
     imageId: "video-thumb-4"
   },
   {
-    title: "Video Title 5",
+    title: "NDOA",
     youtubeUrl: "https://www.youtube.com/watch?v=9O9Fn3jncog&list=RD4Yxbewa4mIE&index=5",
     imageId: "video-thumb-5"
   },
   {
-    title: "Video Title 6",
+    title: "TUJITOLEE",
     youtubeUrl: "https://www.youtube.com/watch?v=hQK_VD-ntng&list=RD4Yxbewa4mIE&index=6",
     imageId: "video-thumb-6"
   }
 ];
+
