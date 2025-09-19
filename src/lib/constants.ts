@@ -92,7 +92,7 @@ export const ministries: Ministry[] = [
         description: "Teaching God’s Word to children in an engaging, fun, and age-appropriate way.",
         icon: Baby,
         imageId: "ministry-children",
-        href: "#", // Replace with actual link
+        href: "/ministries/sunday-school",
     },
     {
         name: "Outreach & Evangelism",
@@ -210,4 +210,5 @@ export const musicVideos = [
     imageId: "video-thumb-6"
   }
 ];
+
 
