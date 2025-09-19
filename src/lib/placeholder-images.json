@@ -240,6 +240,18 @@
       "description": "Men's fellowship members at an outdoor event.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/men6.JPG",
       "imageHint": "men outdoor"
-    }
+    },
+    {
+      "id": "choir-hero",
+      "description": "A choir singing joyfully during a church service.",
+      "imageUrl": "https://picsum.photos/seed/choirhero/1920/1080",
+      "imageHint": "choir singing"
+    },
+    { "id": "video-thumb-1", "description": "Music video thumbnail", "imageUrl": "https://picsum.photos/seed/vid1/600/400", "imageHint": "music video" },
+    { "id": "video-thumb-2", "description": "Music video thumbnail", "imageUrl": "https://picsum.photos/seed/vid2/600/400", "imageHint": "music video" },
+    { "id": "video-thumb-3", "description": "Music video thumbnail", "imageUrl": "https://picsum.photos/seed/vid3/600/400", "imageHint": "music video" },
+    { "id": "video-thumb-4", "description": "Music video thumbnail", "imageUrl": "https://picsum.photos/seed/vid4/600/400", "imageHint": "music video" },
+    { "id": "video-thumb-5", "description": "Music video thumbnail", "imageUrl": "https://picsum.photos/seed/vid5/600/400", "imageHint": "music video" },
+    { "id": "video-thumb-6", "description": "Music video thumbnail", "imageUrl": "https://picsum.photos/seed/vid6/600/400", "imageHint": "music video" }
   ]
 }

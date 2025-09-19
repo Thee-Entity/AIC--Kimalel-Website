@@ -85,7 +85,7 @@ export const ministries: Ministry[] = [
         description: "Leading the congregation in praise and worship through music and song.",
         icon: Music,
         imageId: "ministry-choir",
-        href: "#", // Replace with actual link
+        href: "/ministries/choir",
     },
     {
         name: "Sunday School / Children’s Ministry",
@@ -134,6 +134,7 @@ export const leadership = [
         role: "Pastor",
         bio: "Passionate about discipleship and community, Pastor Maureen leads ministries with a focus on nurturing faith and empowering families.",
         imageId: "leader-2",
+        href: "#",
     },
     {
         name: "Pst. Jophet Lagat",
@@ -175,4 +176,37 @@ export const coreValues = [
         description: "Developing spiritually and holistically.",
         icon: TrendingUp,
     },
+];
+
+export const musicVideos = [
+  {
+    title: "Video Title 1",
+    youtubeUrl: "https://www.youtube.com/watch?v=4Yxbewa4mIE&list=RD4Yxbewa4mIE&start_radio=1",
+    imageId: "video-thumb-1"
+  },
+  {
+    title: "Video Title 2",
+    youtubeUrl: "https://www.youtube.com/watch?v=3I5aE24HWQE&list=RD4Yxbewa4mIE&index=2",
+    imageId: "video-thumb-2"
+  },
+  {
+    title: "Video Title 3",
+    youtubeUrl: "https://www.youtube.com/watch?v=xFuJGtGQJTg&list=RD4Yxbewa4mIE&index=3",
+    imageId: "video-thumb-3"
+  },
+  {
+    title: "Video Title 4",
+    youtubeUrl: "https://www.youtube.com/watch?v=Atp_GGWSDgk&list=RD4Yxbewa4mIE&index=4",
+    imageId: "video-thumb-4"
+  },
+  {
+    title: "Video Title 5",
+    youtubeUrl: "https://www.youtube.com/watch?v=9O9Fn3jncog&list=RD4Yxbewa4mIE&index=5",
+    imageId: "video-thumb-5"
+  },
+  {
+    title: "Video Title 6",
+    youtubeUrl: "https://www.youtube.com/watch?v=hQK_VD-ntng&list=RD4Yxbewa4mIE&index=6",
+    imageId: "video-thumb-6"
+  }
 ];
