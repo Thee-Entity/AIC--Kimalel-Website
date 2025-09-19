@@ -1,3 +1,4 @@
+
 'use server';
 
 import { z } from 'zod';
@@ -8,15 +9,22 @@ const ministrySignupSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   phone: z.string().min(10, { message: 'Please enter a valid phone number.' }),
   ministry: z.string(),
+  childName: z.string().optional(),
+  childAge: z.string().optional(),
 });
 
 export async function handleMinistrySignup(prevState: any, formData: FormData) {
-  const validatedFields = ministrySignupSchema.safeParse({
-    fullName: formData.get('fullName'),
-    email: formData.get('email'),
-    phone: formData.get('phone'),
-    ministry: formData.get('ministry'),
-  });
+    const ministry = formData.get('ministry');
+  
+    const validatedFields = ministrySignupSchema.safeParse({
+        fullName: formData.get('fullName') || formData.get('parentName'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        ministry: ministry,
+        childName: formData.get('childName'),
+        childAge: formData.get('childAge')
+    });
+
 
   if (!validatedFields.success) {
     const fieldErrors = validatedFields.error.flatten().fieldErrors;
@@ -34,7 +42,8 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
         full_name: validatedFields.data.fullName,
         email: validatedFields.data.email,
         phone: validatedFields.data.phone,
-        ministry: validatedFields.data.ministry
+        ministry: validatedFields.data.ministry,
+        meta: ministry === "Children's Ministry" ? { childName: validatedFields.data.childName, childAge: validatedFields.data.childAge } : {}
     }]);
 
   if (error) {

@@ -47,7 +47,7 @@ export default function ChildrenJoin() {
           <input type="hidden" name="ministry" value="Children's Ministry" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
-                name="parentName"
+                name="fullName"
                 placeholder="Parent's Full Name"
                 required
                 className="bg-card border-border text-foreground focus:ring-accent"
