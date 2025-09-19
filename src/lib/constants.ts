@@ -95,11 +95,11 @@ export const ministries: Ministry[] = [
         href: "/ministries/sunday-school",
     },
     {
-        name: "Outreach & Evangelism",
-        description: "Spreading the Gospel and serving the community through outreach programs and missions.",
-        icon: Globe,
-        imageId: "ministry-outreach",
-        href: "#", // Replace with actual link
+        name: "Widows Ministry",
+        description: "Providing spiritual, emotional, and practical support to widows in our church and community.",
+        icon: HandHeart,
+        imageId: "widows-hero",
+        href: "/ministries/widows",
     },
 ];
 
@@ -210,5 +210,6 @@ export const musicVideos = [
     imageId: "video-thumb-6"
   }
 ];
+
 
 

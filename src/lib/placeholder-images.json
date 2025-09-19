@@ -261,6 +261,18 @@
     { "id": "children-gallery-3", "description": "A group of kids singing and clapping.", "imageUrl": "https://picsum.photos/seed/kidsgallery3/400/400", "imageHint": "kids singing" },
     { "id": "children-gallery-4", "description": "A child proudly showing off their drawing.", "imageUrl": "https://picsum.photos/seed/kidsgallery4/400/400", "imageHint": "child drawing" },
     { "id": "children-gallery-5", "description": "Kids playing with building blocks on a colorful mat.", "imageUrl": "https://picsum.photos/seed/kidsgallery5/400/400", "imageHint": "kids blocks" },
-    { "id": "children-gallery-6", "description": "A group of children playing outdoors on a sunny day.", "imageUrl": "https://picsum.photos/seed/kidsgallery6/400/400", "imageHint": "kids outdoors" }
+    { "id": "children-gallery-6", "description": "A group of children playing outdoors on a sunny day.", "imageUrl": "https://picsum.photos/seed/kidsgallery6/400/400", "imageHint": "kids outdoors" },
+    {
+      "id": "widows-hero",
+      "description": "A group of widows from the ministry.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/widow.JPG",
+      "imageHint": "women group"
+    },
+    {
+      "id": "widows-gallery-1",
+      "description": "Widows from the ministry posing for a photo.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/widow2.JPG",
+      "imageHint": "women group"
+    }
   ]
 }
