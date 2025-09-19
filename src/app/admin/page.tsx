@@ -1,16 +1,34 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, PlusCircle, ArrowUpRight } from "lucide-react";
+import { BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, ArrowUpRight } from "lucide-react";
+import { createClient } from "@/utils/supabase/server";
+import { ministries } from "@/lib/constants";
+import { subMonths } from "date-fns";
+import Link from "next/link";
 
-export default function AdminDashboard() {
+export default async function AdminDashboard() {
+  const supabase = createClient();
+
+  const { count: sermonCount } = await supabase.from('sermons').select('*', { count: 'exact', head: true });
+  const { count: eventCount } = await supabase.from('events').select('*', { count: 'exact', head: true }).gt('date', new Date().toISOString());
+  const ministryCount = ministries.length;
+  
+  const oneMonthAgo = subMonths(new Date(), 1).toISOString();
+  const { count: subscriberCount } = await supabase.from('subscribers').select('*', { count: 'exact', head: true }).gt('created_at', oneMonthAgo);
+  const { count: requestCount } = await supabase.from('contacts').select('*', { count: 'exact', head: true }).eq('status', 'Unread');
+  
+  // Placeholder for donations
+  const monthlyDonations = "Ksh 0";
+
+
   const overviewCards = [
-    { title: "Total Sermons", value: "125", icon: BookOpen, buttonText: "Upload New" },
-    { title: "Upcoming Events", value: "8", icon: Calendar, buttonText: "Add Event" },
-    { title: "Active Ministries", value: "6", icon: Users, buttonText: "Manage" },
-    { title: "Donations (Month)", value: "Ksh 42,500", icon: HandHeart, buttonText: "View Donations" },
-    { title: "New Subscribers", value: "15", icon: Newspaper, buttonText: "View List" },
-    { title: "Prayer Requests", value: "3", icon: Mail, buttonText: "View Requests" },
+    { title: "Total Sermons", value: sermonCount, icon: BookOpen, href: "/admin/sermons", buttonText: "View Sermons" },
+    { title: "Upcoming Events", value: eventCount, icon: Calendar, href: "/admin/events", buttonText: "Add Event" },
+    { title: "Active Ministries", value: ministryCount, icon: Users, href: "/admin/ministries", buttonText: "Manage" },
+    { title: "Donations (Month)", value: monthlyDonations, icon: HandHeart, href: "/admin/donations", buttonText: "View Donations" },
+    { title: "New Subscribers", value: subscriberCount, icon: Newspaper, href: "/admin/subscriptions", buttonText: "View List" },
+    { title: "Prayer Requests", value: requestCount, icon: Mail, href: "/admin/requests", buttonText: "View Requests" },
   ];
 
   return (
@@ -27,9 +45,11 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{card.value}</div>
-              <Button variant="link" className="p-0 h-auto text-xs text-accent mt-2">
-                {card.buttonText}
-                <ArrowUpRight className="h-4 w-4 ml-1" />
+              <Button variant="link" asChild className="p-0 h-auto text-xs text-accent mt-2">
+                <Link href={card.href}>
+                  {card.buttonText}
+                  <ArrowUpRight className="h-4 w-4 ml-1" />
+                </Link>
               </Button>
             </CardContent>
           </Card>
