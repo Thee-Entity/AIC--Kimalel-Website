@@ -1,7 +1,9 @@
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CreditCard } from "lucide-react";
 import { PaypalIcon } from "../paypal-icon";
+import { DonationDialog } from "./support/donation-dialog";
 
 export default function CallToGive() {
   return (
@@ -16,18 +18,18 @@ export default function CallToGive() {
           <h3 className="text-2xl font-semibold text-accent mb-4">Give Online</h3>
           <p className="text-gray-300 mb-6">Choose your preferred way to give.</p>
           <div className="space-y-4">
-              <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold" asChild>
-                <Link href="/support">
+              <DonationDialog>
+                <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold">
                     <CreditCard className="mr-2 h-5 w-5" />
                     Donate with Card
-                </Link>
-              </Button>
-               <Button size="lg" className="w-full bg-[#00457C] text-white hover:bg-[#003057] rounded-full transition-shadow hover:shadow-lg" asChild>
-                <Link href="/support">
+                </Button>
+              </DonationDialog>
+               <DonationDialog>
+                <Button size="lg" className="w-full bg-[#00457C] text-white hover:bg-[#003057] rounded-full transition-shadow hover:shadow-lg">
                     <PaypalIcon className="mr-2 h-5 w-5" />
                     Donate with PayPal
-                </Link>
-              </Button>
+                </Button>
+              </DonationDialog>
           </div>
           <div className="my-6 flex items-center">
             <div className="flex-grow border-t border-gray-600"></div>
