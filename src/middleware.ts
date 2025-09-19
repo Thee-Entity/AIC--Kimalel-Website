@@ -1,7 +1,16 @@
-import { type NextRequest, NextResponse } from 'next/server'
+import { type NextRequest } from 'next/server'
+import { updateSession } from '@/utils/supabase/middleware'
 
-export function middleware(request: NextRequest) {
-  return NextResponse.next()
+export async function middleware(request: NextRequest) {
+  const { response, user } = await updateSession(request)
+
+  const isAdminRoute = request.nextUrl.pathname.startsWith('/admin')
+
+  if (isAdminRoute && !user) {
+    return Response.redirect(new URL('/login', request.url))
+  }
+
+  return response
 }
 
 export const config = {
