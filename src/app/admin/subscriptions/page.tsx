@@ -6,39 +6,20 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, PlusCircle, Search, Download } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { createClient } from "@/utils/supabase/server";
+import { format } from "date-fns";
 
-const subscribers = [
-  {
-    name: "Alice Johnson",
-    email: "alice@example.com",
-    source: "Website Signup",
-    date: "2024-07-22",
-    status: "Active",
-  },
-  {
-    name: "Bob Williams",
-    email: "bob@example.com",
-    source: "Event RSVP",
-    date: "2024-07-21",
-    status: "Active",
-  },
-  {
-    name: "Charlie Brown",
-    email: "charlie@example.com",
-    source: "Manual",
-    date: "2024-07-20",
-    status: "Unsubscribed",
-  },
-   {
-    name: "Diana Miller",
-    email: "diana@example.com",
-    source: "Website Signup",
-    date: "2024-07-19",
-    status: "Active",
-  },
-];
+export default async function SubscriptionsAdminPage() {
+  const supabase = createClient();
+  const { data: subscribers, error } = await supabase
+    .from('subscribers')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-export default function SubscriptionsAdminPage() {
+  if (error) {
+    console.error("Error fetching subscribers:", error);
+  }
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -75,9 +56,7 @@ export default function SubscriptionsAdminPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
                 <TableHead>Email</TableHead>
-                <TableHead>Source</TableHead>
                 <TableHead>Date Subscribed</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>
@@ -86,16 +65,12 @@ export default function SubscriptionsAdminPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {subscribers.map((subscriber) => (
-                <TableRow key={subscriber.email}>
-                  <TableCell className="font-medium">{subscriber.name}</TableCell>
-                  <TableCell>{subscriber.email}</TableCell>
+              {subscribers && subscribers.map((subscriber) => (
+                <TableRow key={subscriber.id}>
+                  <TableCell className="font-medium">{subscriber.email}</TableCell>
+                  <TableCell>{format(new Date(subscriber.created_at), "PPP")}</TableCell>
                   <TableCell>
-                    <Badge variant="secondary">{subscriber.source}</Badge>
-                  </TableCell>
-                  <TableCell>{subscriber.date}</TableCell>
-                  <TableCell>
-                    <Badge variant={subscriber.status === 'Active' ? 'default' : 'destructive'}>{subscriber.status}</Badge>
+                    <Badge variant={'default'}>Active</Badge>
                   </TableCell>
                   <TableCell>
                     <DropdownMenu>
@@ -107,13 +82,20 @@ export default function SubscriptionsAdminPage() {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
+                        <DropdownMenuItem>Unsubscribe</DropdownMenuItem>
                         <DropdownMenuItem>Delete</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>
                 </TableRow>
               ))}
+               {(!subscribers || subscribers.length === 0) && (
+                <TableRow>
+                  <TableCell colSpan={4} className="h-24 text-center">
+                    No subscribers yet.
+                  </TableCell>
+                </TableRow>
+              )}
             </TableBody>
           </Table>
         </CardContent>
