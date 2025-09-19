@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useActionState } from 'react';
@@ -47,7 +46,7 @@ export default function ChildrenJoin() {
           <input type="hidden" name="ministry" value="Children's Ministry" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
-                name="fullName"
+                name="parentName"
                 placeholder="Parent's Full Name"
                 required
                 className="bg-card border-border text-foreground focus:ring-accent"
@@ -75,6 +74,13 @@ export default function ChildrenJoin() {
                 className="bg-card border-border text-foreground focus:ring-accent"
             />
            </div>
+            <Input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+                className="bg-card border-border text-foreground focus:ring-accent"
+            />
           <SubmitButton />
         </form>
       </div>
