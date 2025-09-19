@@ -1,38 +1,27 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SermonEditDialog } from "@/components/admin/sermons/sermon-edit-dialog";
+import { createClient } from "@/utils/supabase/server";
+import { format }s from "date-fns";
 
-const sermons = [
-  {
-    title: "The Power of Forgiveness",
-    preacher: "Rev. John Doe",
-    date: "2023-10-29",
-    status: "Published",
-    type: "Video",
-  },
-  {
-    title: "Living a Life of Purpose",
-    preacher: "Pastor Moureen Kosgei",
-    date: "2023-10-22",
-    status: "Published",
-    type: "Audio",
-  },
-    {
-    title: "The Heart of a Servant",
-    preacher: "Pastor Jophet Lagat",
-    date: "2023-10-15",
-    status: "Draft",
-    type: "Text",
-  },
-];
+export default async function SermonsAdminPage() {
+  const supabase = createClient();
+  const { data: sermons, error } = await supabase
+    .from('sermons')
+    .select('*')
+    .order('date', { ascending: false });
 
-export default function SermonsAdminPage() {
+  if (error) {
+    console.error("Error fetching sermons:", error);
+    // Handle error appropriately
+  }
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -76,16 +65,16 @@ export default function SermonsAdminPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {sermons.map((sermon) => (
-                <TableRow key={sermon.title}>
+              {sermons && sermons.map((sermon) => (
+                <TableRow key={sermon.id}>
                   <TableCell className="font-medium">{sermon.title}</TableCell>
                   <TableCell>{sermon.preacher}</TableCell>
-                  <TableCell>{sermon.date}</TableCell>
+                  <TableCell>{format(new Date(sermon.date), "PPP")}</TableCell>
                   <TableCell>
                     <Badge variant={sermon.type === 'Video' ? 'default' : 'secondary'}>{sermon.type}</Badge>
                   </TableCell>
                   <TableCell>
-                    <Badge variant={sermon.status === 'Published' ? 'default' : 'outline'}>{sermon.status}</Badge>
+                    <Badge variant={sermon.published ? 'default' : 'outline'}>{sermon.published ? 'Published' : 'Draft'}</Badge>
                   </TableCell>
                   <TableCell>
                     <DropdownMenu>
