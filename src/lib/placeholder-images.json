@@ -244,7 +244,7 @@
     {
       "id": "choir-hero",
       "description": "A choir singing joyfully during a church service.",
-      "imageUrl": "https://picsum.photos/seed/choirhero/1920/1080",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/worship.JPG",
       "imageHint": "choir singing"
     },
     { "id": "video-thumb-1", "description": "Music video thumbnail for YERUSALEMU", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir6.avif", "imageHint": "music video" },
