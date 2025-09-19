@@ -80,6 +80,9 @@ export default function Footer() {
               <span>Powered by</span>
               <TheeEntityLogo />
             </div>
+             <div className="mt-4">
+                <Link href="/admin" className="text-xs text-gray-600 hover:text-accent transition-colors">Admin</Link>
+            </div>
           </div>
         </div>
       </div>
