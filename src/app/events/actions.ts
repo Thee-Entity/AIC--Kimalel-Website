@@ -2,13 +2,12 @@
 'use server';
 
 import { z } from 'zod';
-// Here you would import your firebase admin config to write to firestore
-// For now, we'll just log to the console
+import { createClient } from '@/utils/supabase/server';
 
 const eventRsvpSchema = z.object({
   fullName: z.string().min(2, { message: 'Please enter your full name.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
-  event: z.string(),
+  event: z.string().min(1, { message: 'Please select an event.' }),
 });
 
 export async function handleEventRsvp(prevState: any, formData: FormData) {
@@ -19,17 +18,33 @@ export async function handleEventRsvp(prevState: any, formData: FormData) {
   });
 
   if (!validatedFields.success) {
+    const fieldErrors = validatedFields.error.flatten().fieldErrors;
+    const errorMessage = fieldErrors.fullName?.[0] || fieldErrors.email?.[0] || fieldErrors.event?.[0] || 'Invalid input.';
     return {
-      message: validatedFields.error.flatten().fieldErrors.fullName?.[0] || validatedFields.error.flatten().fieldErrors.email?.[0] || 'Invalid input.',
+      message: errorMessage,
       success: false,
     };
   }
   
-  // Here you would integrate with your Firebase Firestore
-  console.log(`New RSVP for ${validatedFields.data.event}:`);
-  console.log(`Name: ${validatedFields.data.fullName}`);
-  console.log(`Email: ${validatedFields.data.email}`);
+  const supabase = createClient();
+  const { error } = await supabase
+    .from('event_rsvps')
+    .insert([{ 
+        full_name: validatedFields.data.fullName,
+        email: validatedFields.data.email,
+        event: validatedFields.data.event
+    }]);
 
-  // For demonstration, we'll just return a success message.
+  if (error) {
+    console.error('Supabase error:', error.message);
+    if (error.code === '23505') { 
+        return { message: 'You have already RSVPd for this event with this email.', success: false };
+    }
+    return { 
+        message: 'Sorry, there was an error processing your RSVP. Please try again.',
+        success: false 
+    };
+  }
+
   return { message: `Thank you for your RSVP, ${validatedFields.data.fullName}! We look forward to seeing you.`, success: true };
 }
