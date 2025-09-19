@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { askAiAboutSermon } from '@/ai/flows/ai-sermon-assistant';
-import { createAdminClient } from '@/utils/supabase/server';
+import { createClient } from '@/utils/supabase/server';
 
 export async function handleSermonQuery(sermonTranscript: string, question: string) {
   if (!process.env.GEMINI_API_KEY) {
@@ -40,7 +40,7 @@ export async function handleNewsletterSignup(prevState: any, formData: FormData)
     };
   }
   
-  const supabase = createAdminClient();
+  const supabase = createClient();
   const { error } = await supabase
     .from('subscribers')
     .insert([{ email: validatedFields.data.email }]);
