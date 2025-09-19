@@ -1,37 +1,26 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { createClient } from "@/utils/supabase/server";
+import { format } from "date-fns";
+import { EventEditDialog } from "@/components/admin/events/event-edit-dialog";
 
-const events = [
-  {
-    title: "Youth Worship Night",
-    date: "2024-11-12",
-    location: "Main Sanctuary",
-    ministry: "Youth Ministry",
-    status: "Upcoming",
-  },
-  {
-    title: "Community Food Drive",
-    date: "2024-10-18",
-    location: "Church Grounds",
-    ministry: "Outreach Team",
-    status: "Past",
-  },
-  {
-    title: "Annual Christmas Cantata",
-    date: "2023-12-03",
-    location: "Main Sanctuary",
-    ministry: "Choir & Worship Team",
-    status: "Past",
-  },
-];
+export default async function EventsAdminPage() {
+  const supabase = createClient();
+  const { data: events, error } = await supabase
+    .from('events')
+    .select('*')
+    .order('date', { ascending: false });
 
-export default function EventsAdminPage() {
+  if (error) {
+    console.error("Error fetching events:", error);
+  }
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -39,10 +28,12 @@ export default function EventsAdminPage() {
             <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Events</h1>
             <p className="text-gray-600 dark:text-gray-400">Manage all church events here.</p>
         </div>
-        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow">
-            <PlusCircle className="mr-2 h-5 w-5" />
-            Add New Event
-        </Button>
+        <EventEditDialog>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow">
+              <PlusCircle className="mr-2 h-5 w-5" />
+              Add New Event
+          </Button>
+        </EventEditDialog>
       </div>
 
       <Card className="bg-white dark:bg-gray-800">
@@ -73,14 +64,14 @@ export default function EventsAdminPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {events.map((event) => (
-                <TableRow key={event.title}>
+              {events && events.map((event) => (
+                <TableRow key={event.id}>
                   <TableCell className="font-medium">{event.title}</TableCell>
-                  <TableCell>{event.date}</TableCell>
+                  <TableCell>{format(new Date(event.date), "PPP")}</TableCell>
                   <TableCell>{event.location}</TableCell>
-                   <TableCell>{event.ministry}</TableCell>
+                  <TableCell>{event.ministry}</TableCell>
                   <TableCell>
-                    <Badge variant={event.status === 'Upcoming' ? 'default' : 'outline'}>{event.status}</Badge>
+                    <Badge variant={event.published ? 'default' : 'outline'}>{event.published ? 'Published' : 'Draft'}</Badge>
                   </TableCell>
                   <TableCell>
                     <DropdownMenu>

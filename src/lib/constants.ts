@@ -25,7 +25,7 @@ export const upcomingEvents = [
     title: "Youth Worship Night",
     description: "A special night of worship, prayer, and fellowship for our youth. All are welcome!",
     imageId: "event-1",
-    organizer: "Youth Ministry"
+    organizer: "Youth Fellowship"
   },
   {
     date: new Date(2024, 10, 18),
@@ -60,21 +60,21 @@ type Ministry = {
 
 export const ministries: Ministry[] = [
     {
-        name: "Men’s Fellowship (AIC CBF)",
+        name: "Men's Fellowship",
         description: "Supporting and equipping men to be Christ-centered leaders in the home, church, and community.",
         icon: Users,
         imageId: "ministry-men",
         href: "/ministries/mens-fellowship",
     },
     {
-        name: "Women’s Fellowship (AIC Women’s Guild)",
+        name: "Women's Fellowship",
         description: "Empowering women through prayer, fellowship, and service.",
         icon: HeartHandshake,
         imageId: "ministry-women",
         href: "/ministries/womens-fellowship",
     },
     {
-        name: "Youth Fellowship (AIC Youth)",
+        name: "Youth Fellowship",
         description: "Building a vibrant generation of young believers rooted in faith and service.",
         icon: Users,
         imageId: "ministry-youth",
@@ -88,7 +88,7 @@ export const ministries: Ministry[] = [
         href: "/ministries/choir",
     },
     {
-        name: "Sunday School / Children’s Ministry",
+        name: "Children's Ministry",
         description: "Teaching God’s Word to children in an engaging, fun, and age-appropriate way.",
         icon: Baby,
         imageId: "ministry-children",
@@ -210,6 +210,3 @@ export const musicVideos = [
     imageId: "video-thumb-6"
   }
 ];
-
-
-
