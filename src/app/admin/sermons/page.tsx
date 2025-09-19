@@ -8,7 +8,7 @@ import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SermonEditDialog } from "@/components/admin/sermons/sermon-edit-dialog";
 import { createClient } from "@/utils/supabase/server";
-import { format }s from "date-fns";
+import { format } from "date-fns";
 
 export default async function SermonsAdminPage() {
   const supabase = createClient();
