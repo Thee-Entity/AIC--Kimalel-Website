@@ -1,5 +1,7 @@
 # AIC Kimalel Saramek Church Website
 
+![AIC Kimalel Saramek Church Website](https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/AIC%20%20Design.png)
+
 This is a modern, feature-rich website for the AIC Kimalel Saramek Church, built with Next.js, Tailwind CSS, and Supabase. It includes a comprehensive public-facing site and a secure admin dashboard for managing content.
 
 ## Key Features
