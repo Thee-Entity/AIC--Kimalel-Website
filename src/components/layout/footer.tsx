@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Facebook, Youtube, Phone, Mail, MapPin, KeyRound } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { TheeEntityLogo } from '../thee-entity-logo';
+import { Button } from '../ui/button';
 
 const socialLinks = [
   { name: 'YouTube', icon: Youtube, href: '#' },
@@ -75,12 +76,15 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+            <div className="mb-4">
+               <Button asChild variant="outline">
+                    <Link href="/login">
+                        <KeyRound className="mr-2 h-4 w-4" />
+                        Admin Login (Temporary)
+                    </Link>
+               </Button>
+            </div>
             <p>&copy; {new Date().getFullYear()} AIC Kimalel Saramek Church. All Rights Reserved.
-              <span className="mx-2">|</span>
-              <Link href="/login" className="inline-flex items-center gap-1 text-gray-400 hover:text-accent transition-colors">
-                <KeyRound className="w-3 h-3" />
-                Admin
-              </Link>
             </p>
             <div className="flex justify-center items-center gap-2 mt-2">
               <span>Powered by</span>
