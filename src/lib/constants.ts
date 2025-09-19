@@ -78,7 +78,7 @@ export const ministries: Ministry[] = [
         description: "Building a vibrant generation of young believers rooted in faith and service.",
         icon: Users,
         imageId: "ministry-youth",
-        href: "#", // Replace with actual link
+        href: "/ministries/youth-fellowship",
     },
     {
         name: "Choir & Worship Team",
