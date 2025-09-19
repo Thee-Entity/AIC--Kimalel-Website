@@ -37,7 +37,7 @@ export async function handleEventRsvp(prevState: any, formData: FormData) {
 
   if (error) {
     console.error('Supabase error:', error.message);
-    if (error.code === '23505') { 
+    if (error.code === '23505') { // Unique constraint violation
         return { message: 'You have already RSVPd for this event with this email.', success: false };
     }
     return { 
